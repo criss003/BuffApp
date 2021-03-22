@@ -24,8 +24,9 @@ class BuffViewModel {
     // MARK: Vars
     
     weak var delegate: BuffViewModelDelegate?
-    var idRequest: Int = BuffViewModelConstants.idMinValue
+    private var idRequest: Int = BuffViewModelConstants.idMinValue
     private var timer: Timer?
+    private var buffModel: BuffModel?
     
     // MARK: Methods
     
@@ -49,6 +50,7 @@ class BuffViewModel {
             self.delegate?.modelUpdateDidFail(error: buffError)
         } successHandler: { buffData in
             print(buffData)
+            self.buffModel = buffData
             self.delegate?.modelUpdateDidSucced()
         }
     }
@@ -59,5 +61,19 @@ class BuffViewModel {
         } else {
             idRequest += 1
         }
+    }
+    
+    // MARK: Buff Details
+    
+    func numberOfRows() -> Int {
+        let numberOfAnswers = buffModel?.result?.answers.count ?? 0
+        return RowTypeModelConstants.topSections + numberOfAnswers
+    }
+    
+    func rowInfo(at indexPath: IndexPath) -> (value: String?, avatar: String?) {
+        guard let rowType = RowTypeModel(rawValue: indexPath.row) else {
+            return (nil, nil)
+        }
+        return (rowType.value(buffModel: buffModel, index: indexPath.row), rowType.avatar(buffModel: buffModel))
     }
 }

@@ -110,5 +110,6 @@ extension StreamViewController: BuffViewDelegate {
     func shouldShow() {
         buffView.isHidden = false
         view.bringSubviewToFront(buffView)
+        buffView.showQuestionsView()
     }
 }

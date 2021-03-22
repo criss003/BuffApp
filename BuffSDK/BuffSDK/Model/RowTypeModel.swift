@@ -17,11 +17,6 @@ enum RowTypeModel: Int {
     case question
     case answer
     
-    func numberOfRows(buffModel: BuffModel?) -> Int {
-        let numberOfAnswers = buffModel?.result?.answers.count ?? 0
-        return RowTypeModelConstants.topSections + numberOfAnswers
-    }
-    
     func value(buffModel: BuffModel?, index: Int = 0) -> String? {
         guard let buffResult = buffModel?.result else {
             return nil

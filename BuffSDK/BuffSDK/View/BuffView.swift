@@ -48,8 +48,8 @@ public class BuffView: UIViewNibLoadable {
         viewModel.startMonitoringQuestions()
     }
     
-    func showQuestionsView() {
-        
+    public func showQuestionsView() {
+        questionsView.configureUI()
     }
 }
 
