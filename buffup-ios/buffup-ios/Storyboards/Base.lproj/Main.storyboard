@@ -167,6 +167,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gBZ-SO-BVj"/>
                     <connections>
+                        <outlet property="buffView" destination="Uce-b5-IQg" id="xfo-Ff-Hux"/>
                         <outlet property="exitButton" destination="swH-kd-a60" id="XDQ-HU-H3T"/>
                     </connections>
                 </viewController>

@@ -13,7 +13,13 @@ struct BuffViewConstants {
     static let errorMessage = "You have no internet connection."
 }
 
+public protocol BuffViewDelegate: class {
+    func shouldShow()
+}
+
 public class BuffView: UIViewNibLoadable {
+    public weak var delegate: BuffViewDelegate?
+    @IBOutlet weak var questionsView: QuestionsView!
     let viewModel = BuffViewModel()
     
     override public init(frame: CGRect) {
@@ -40,6 +46,10 @@ public class BuffView: UIViewNibLoadable {
         viewModel.delegate = self
         viewModel.startMonitoringQuestions()
     }
+    
+    func showQuestionsView() {
+        
+    }
 }
 
 extension BuffView: BuffViewModelDelegate {
@@ -49,6 +59,6 @@ extension BuffView: BuffViewModelDelegate {
     }
     
     func modelUpdateDidFail(error: BuffError) {
-        
+        print(error.message)
     }
 }

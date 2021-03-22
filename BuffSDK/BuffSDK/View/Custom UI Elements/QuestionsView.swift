@@ -9,7 +9,7 @@
 import UIKit
 
 private struct QuestionsViewConstants {
-    static let title = " "
+    static let title = "title"
 }
 
 protocol QuestionsViewDelegate: class {

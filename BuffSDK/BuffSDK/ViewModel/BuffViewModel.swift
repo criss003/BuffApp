@@ -38,7 +38,8 @@ class BuffViewModel {
         timer = nil
     }
         
-    @objc func requestBuffs() {
+    @objc
+    func requestBuffs() {
         fetchBuffs()
         updateId()
     }

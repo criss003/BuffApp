@@ -13,6 +13,7 @@ import BuffSDK
 class StreamViewController: LandscapeViewController {
     
     @IBOutlet weak var exitButton: UIButton!
+    @IBOutlet weak var buffView: BuffView!
     
     private var player: AVPlayer!
     private var timeObserver: Any?
@@ -27,10 +28,8 @@ class StreamViewController: LandscapeViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showExitButton(recognizer:)))
-        tapGesture.cancelsTouchesInView = false
-        tapGesture.delegate = self
-        self.view.addGestureRecognizer(tapGesture)
+        addTapGesture()
+        buffView.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,6 +42,13 @@ class StreamViewController: LandscapeViewController {
     
     deinit {
         cleanPlayer()
+    }
+    
+    private func addTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showExitButton(recognizer:)))
+        tapGesture.cancelsTouchesInView = false
+        tapGesture.delegate = self
+        self.view.addGestureRecognizer(tapGesture)
     }
       
     private func playVideoWithURL(url: URL) {
@@ -97,5 +103,11 @@ extension StreamViewController: UIGestureRecognizerDelegate {
             return false
         }
         return true
+    }
+}
+
+extension StreamViewController: BuffViewDelegate {
+    func shouldShow() {
+        
     }
 }

@@ -39,8 +39,8 @@ class BuffError: Error {
         }
     }
     
-    var errorType: ErrorType = .failed
-    var errorMessage: String?
+    private var errorType: ErrorType = .failed
+    private var errorMessage: String?
     
     init(errorType: ErrorType) {
         self.errorType = errorType
