@@ -20,15 +20,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1Q-EQ-PEq" customClass="QuestionsView" customModule="BuffSDK" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="348" width="200" height="200"/>
+                    <rect key="frame" x="20" y="642" width="300" height="200"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="1RB-5q-Ohu"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="s1Q-EQ-PEq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="93a-yI-Mlw"/>
-                <constraint firstItem="s1Q-EQ-PEq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="rh6-lk-T2K"/>
+                <constraint firstItem="s1Q-EQ-PEq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="H6S-tK-dKo"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="s1Q-EQ-PEq" secondAttribute="bottom" constant="20" id="e57-z8-ChA"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </view>
