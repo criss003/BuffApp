@@ -9,7 +9,9 @@
 import UIKit
 
 private struct QuestionsViewConstants {
-    static let title = "title"
+    static let senderTableViewCell = "SenderTableViewCell"
+    static let questionTableViewCell = "QuestionTableViewCell"
+    static let answerTableViewCell = "AnswerTableViewCell"
 }
 
 protocol QuestionsViewDelegate: class {
@@ -22,6 +24,24 @@ class QuestionsView: UIViewNibLoadable {
     @IBOutlet private weak var heightConstraint: NSLayoutConstraint!
     
     let viewModel = QuestionsViewModel()
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        registerCells()
+    }
+    
+    func registerCells() {
+        tableView.register(UINib(nibName: QuestionsViewConstants.senderTableViewCell,
+                                 bundle: Bundle(for: Self.self)),
+                           forCellReuseIdentifier: QuestionsViewConstants.senderTableViewCell)
+        tableView.register(UINib(nibName: QuestionsViewConstants.questionTableViewCell,
+                                 bundle: Bundle(for: Self.self)),
+                           forCellReuseIdentifier: QuestionsViewConstants.questionTableViewCell)
+        tableView.register(UINib(nibName: QuestionsViewConstants.answerTableViewCell,
+                                 bundle: Bundle(for: Self.self)),
+                           forCellReuseIdentifier: QuestionsViewConstants.answerTableViewCell)
+    }
     
     func configureUI(buffModel: BuffModel?) {
         viewModel.updateData(buffModel: buffModel)
@@ -39,19 +59,21 @@ extension QuestionsView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
-        cell.textLabel?.text = viewModel.rowInfo(at: indexPath).value
-        return cell
-        
-//        if indexPath.row == 0 {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: ContactDetailsViewControllerConstants.contactDetailsAvatarCellIdentifier, for: indexPath) as! ContactDetailAvatarTableViewCell
-//            cell.configure(rowInfo: viewModel.rowInfo(at: indexPath))
-//            return cell
-//        } else {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: ContactDetailsViewControllerConstants.contactDetailsCellIdentifier, for: indexPath) as! ContactDetailTableViewCell
-//            cell.configure(rowInfo: viewModel.rowInfo(at: indexPath))
-//            return cell
-//        }
+        let rowInfo = viewModel.rowInfo(at: indexPath)
+
+        if indexPath.row == RowTypeModel.sender.rawValue {
+            let cell: SenderTableViewCell = tableView.dequeueReusableCell(withIdentifier: QuestionsViewConstants.senderTableViewCell, for: indexPath) as! SenderTableViewCell
+            cell.configure(rowInfo: rowInfo)
+            return cell
+        } else if indexPath.row == RowTypeModel.question.rawValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: QuestionsViewConstants.questionTableViewCell, for: indexPath) as! QuestionTableViewCell
+            cell.configure(rowInfo: rowInfo)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: QuestionsViewConstants.answerTableViewCell, for: indexPath) as! AnswerTableViewCell
+            cell.configure(rowInfo: rowInfo)
+            return cell
+        }
     }
 
 }
