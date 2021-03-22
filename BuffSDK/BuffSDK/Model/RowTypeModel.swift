@@ -9,87 +9,47 @@
 import Foundation
 
 struct RowTypeModelConstants {
-    static let receivedDateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z"
-    static let displayDateFormat = "dd.MM.yyyy"
-    
-    static let nameTitle = ""
-    static let jobTitle = "Job Title"
-    static let dateTitle = "Date Added"
-    static let emailTitle = "Email"
-    static let phoneTitle = "Phone Number"
-    static let ageTitle = "Age"
+    static let topSections = 2
 }
 
-enum RowTypeModel: Int, CaseIterable {
-    case name
-    case job
-    case date
-    case email
-    case phone
-    case age
+enum RowTypeModel: Int {
+    case sender
+    case question
+    case answer
     
-    var title: String {
+    func numberOfRows(buffModel: BuffModel?) -> Int {
+        let numberOfAnswers = buffModel?.result?.answers.count ?? 0
+        return RowTypeModelConstants.topSections + numberOfAnswers
+    }
+    
+    func value(buffModel: BuffModel?, index: Int = 0) -> String? {
+        guard let buffResult = buffModel?.result else {
+            return nil
+        }
+
         switch self {
-        case .name:
-            return RowTypeModelConstants.nameTitle
-        case .job:
-            return RowTypeModelConstants.jobTitle
-        case .date:
-            return RowTypeModelConstants.dateTitle
-        case .email:
-            return RowTypeModelConstants.emailTitle
-        case .phone:
-            return RowTypeModelConstants.phoneTitle
-        case .age:
-            return RowTypeModelConstants.ageTitle
+        case .sender:
+            let name = [buffResult.author?.first_name, buffResult.author?.last_name].compactMap {
+                $0?.isEmpty == false ? $0 : nil
+            }.joined(separator: " ")
+            return name
+        case .question:
+            return buffResult.question?.title
+        case .answer:
+            return buffResult.answers[safe: index - RowTypeModelConstants.topSections]?.title
         }
     }
     
-    func value(contactModel: BuffModel?) -> String? {
-        return nil
-//        guard let contact = contactModel else {
-//            return nil
-//        }
-//
-//        switch self {
-//        case .name:
-//            return contact.name
-//        case .job:
-//            return contact.jobTitle
-//        case .date:
-//            let dateFormatter = DateFormatter()
-//            dateFormatter.dateFormat = RowTypeModelConstants.receivedDateFormat
-//            if let dateAdded = contact.dateAdded,
-//                let date = dateFormatter.date(from: dateAdded) {
-//                let displayDateFormatter = DateFormatter()
-//                displayDateFormatter.dateFormat = RowTypeModelConstants.displayDateFormat
-//                let displayDate = displayDateFormatter.string(from: date)
-//                return displayDate
-//            }
-//            return nil
-//        case .email:
-//            return contact.email
-//        case .phone:
-//            return contact.phoneNumber
-//        case .age:
-//            if let age = contact.age {
-//                return String(age)
-//            } else {
-//                return nil
-//            }
-//        }
+    func avatar(buffModel: BuffModel?) -> String? {
+        guard let buffResult = buffModel?.result else {
+            return nil
+        }
+        
+        switch self {
+        case .sender:
+            return buffResult.author?.image
+        case .question, .answer:
+            return nil
+        }
     }
-    
-//    func avatar(contactModel: ContactModel?) -> String? {
-//        guard let contact = contactModel else {
-//            return nil
-//        }
-//        
-//        switch self {
-//        case .name:
-//            return contact.avatar
-//        case .job, .date, .email, .phone, .age:
-//            return nil
-//        }
-//    }
 }

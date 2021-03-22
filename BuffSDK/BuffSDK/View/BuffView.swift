@@ -17,6 +17,7 @@ public protocol BuffViewDelegate: class {
     func shouldShow()
 }
 
+@IBDesignable
 public class BuffView: UIViewNibLoadable {
     public weak var delegate: BuffViewDelegate?
     @IBOutlet weak var questionsView: QuestionsView!
@@ -55,7 +56,7 @@ public class BuffView: UIViewNibLoadable {
 extension BuffView: BuffViewModelDelegate {
 
     func modelUpdateDidSucced() {
-        
+        delegate?.shouldShow()
     }
     
     func modelUpdateDidFail(error: BuffError) {

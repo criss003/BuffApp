@@ -108,6 +108,7 @@ extension StreamViewController: UIGestureRecognizerDelegate {
 
 extension StreamViewController: BuffViewDelegate {
     func shouldShow() {
-        
+        buffView.isHidden = false
+        view.bringSubviewToFront(buffView)
     }
 }
