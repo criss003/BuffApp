@@ -15,7 +15,7 @@ struct BuffViewModelConstants {
 }
 
 protocol BuffViewModelDelegate: class {
-    func modelUpdateDidSucced()
+    func modelUpdateDidSucced(buffModel: BuffModel?)
     func modelUpdateDidFail(error: BuffError)
 }
 
@@ -51,7 +51,7 @@ class BuffViewModel {
         } successHandler: { buffData in
             print(buffData)
             self.buffModel = buffData
-            self.delegate?.modelUpdateDidSucced()
+            self.delegate?.modelUpdateDidSucced(buffModel: buffData)
         }
     }
     
@@ -61,19 +61,5 @@ class BuffViewModel {
         } else {
             idRequest += 1
         }
-    }
-    
-    // MARK: Buff Details
-    
-    func numberOfRows() -> Int {
-        let numberOfAnswers = buffModel?.result?.answers.count ?? 0
-        return RowTypeModelConstants.topSections + numberOfAnswers
-    }
-    
-    func rowInfo(at indexPath: IndexPath) -> (value: String?, avatar: String?) {
-        guard let rowType = RowTypeModel(rawValue: indexPath.row) else {
-            return (nil, nil)
-        }
-        return (rowType.value(buffModel: buffModel, index: indexPath.row), rowType.avatar(buffModel: buffModel))
     }
 }

@@ -21,7 +21,10 @@ class QuestionsView: UIViewNibLoadable {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var heightConstraint: NSLayoutConstraint!
     
-    func configureUI() {
+    let viewModel = QuestionsViewModel()
+    
+    func configureUI(buffModel: BuffModel?) {
+        viewModel.updateData(buffModel: buffModel)
         tableView.reloadData()
         heightConstraint.constant = tableView.contentSize.height
     }
@@ -32,12 +35,12 @@ extension QuestionsView: UITableViewDataSource, UITableViewDelegate {
     // MARK: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return viewModel.numberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
-        cell.textLabel?.text = "aa"
+        cell.textLabel?.text = viewModel.rowInfo(at: indexPath).value
         return cell
         
 //        if indexPath.row == 0 {

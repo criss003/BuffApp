@@ -12,7 +12,7 @@ struct RowTypeModelConstants {
     static let topSections = 2
 }
 
-enum RowTypeModel: Int {
+enum RowTypeModel: Int, CaseIterable {
     case sender
     case question
     case answer

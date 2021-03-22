@@ -49,13 +49,14 @@ public class BuffView: UIViewNibLoadable {
     }
     
     public func showQuestionsView() {
-        questionsView.configureUI()
+
     }
 }
 
 extension BuffView: BuffViewModelDelegate {
 
-    func modelUpdateDidSucced() {
+    func modelUpdateDidSucced(buffModel: BuffModel?) {
+        questionsView.configureUI(buffModel: buffModel)
         delegate?.shouldShow()
     }
     
