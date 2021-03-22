@@ -14,7 +14,8 @@ struct BuffViewModelConstants {
 }
 
 protocol BuffViewModelDelegate: class {
-    func modelUpdateDidFinish()
+    func modelUpdateDidSucced()
+    func modelUpdateDidFail(error: BuffError)
 }
 
 class BuffViewModel {
@@ -26,9 +27,12 @@ class BuffViewModel {
     // MARK: Methods
         
     func performModelUpdate() {
-        BuffService().fetchBuffs(completionHandler: { dataBuffs in
-            print(dataBuffs)
-            self.delegate?.modelUpdateDidFinish()
-        })
+        BuffService().fetchBuffs(id: 1) { buffError in
+            self.delegate?.modelUpdateDidFail(error: buffError)
+        } successHandler: { buffData in
+            print(buffData)
+            self.delegate?.modelUpdateDidSucced()
+        }
+
     }
 }

@@ -15,6 +15,7 @@
 		280D98AB26068E29009708E7 /* BuffService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D98AA26068E29009708E7 /* BuffService.swift */; };
 		280D98B126068E4F009708E7 /* BuffViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D98B026068E4F009708E7 /* BuffViewModel.swift */; };
 		280D98CB2607F188009708E7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 280D98CA2607F188009708E7 /* Alamofire */; };
+		280D98F026090868009708E7 /* BuffError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D98EF26090868009708E7 /* BuffError.swift */; };
 		E617E33223AA9C5400BB7970 /* BuffSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = E617E33123AA9C5400BB7970 /* BuffSDK.swift */; };
 		E6497CB525FA7E80004AFD12 /* CircularTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6497CB425FA7E80004AFD12 /* CircularTimer.swift */; };
 		E6497CBC25FA7EAC004AFD12 /* UIViewNibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6497CBB25FA7EAC004AFD12 /* UIViewNibLoadable.swift */; };
@@ -47,6 +48,7 @@
 		280D989A26068D79009708E7 /* BuffModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuffModel.swift; sourceTree = "<group>"; };
 		280D98AA26068E29009708E7 /* BuffService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuffService.swift; sourceTree = "<group>"; };
 		280D98B026068E4F009708E7 /* BuffViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuffViewModel.swift; sourceTree = "<group>"; };
+		280D98EF26090868009708E7 /* BuffError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuffError.swift; sourceTree = "<group>"; };
 		E617E33123AA9C5400BB7970 /* BuffSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuffSDK.swift; sourceTree = "<group>"; };
 		E6497CB425FA7E80004AFD12 /* CircularTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTimer.swift; sourceTree = "<group>"; };
 		E6497CBB25FA7EAC004AFD12 /* UIViewNibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewNibLoadable.swift; sourceTree = "<group>"; };
@@ -117,6 +119,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		280D98EE2609084A009708E7 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				280D98EF26090868009708E7 /* BuffError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		E6497CB825FA7E84004AFD12 /* Custom UI Elements */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +168,7 @@
 		E6652CBD2384247B00A1BF6D /* BuffSDK */ = {
 			isa = PBXGroup;
 			children = (
+				280D98EE2609084A009708E7 /* Errors */,
 				E6497CC425FA7EE1004AFD12 /* Extensions */,
 				280D989626068D79009708E7 /* Helpers */,
 				280D98A926068E29009708E7 /* Service */,
@@ -351,6 +362,7 @@
 				E6497CC025FA7ECF004AFD12 /* Bundle+Extensions.swift in Sources */,
 				E6497CB525FA7E80004AFD12 /* CircularTimer.swift in Sources */,
 				280D989F26068D79009708E7 /* RowTypeModel.swift in Sources */,
+				280D98F026090868009708E7 /* BuffError.swift in Sources */,
 				280D98AB26068E29009708E7 /* BuffService.swift in Sources */,
 				E66941C0249123810092ED98 /* BuffView.swift in Sources */,
 				280D98B126068E4F009708E7 /* BuffViewModel.swift in Sources */,

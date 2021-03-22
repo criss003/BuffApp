@@ -11,27 +11,27 @@ import Alamofire
 
 struct BuffServiceConstants {
     static let serviceURL = "https://demo2373134.mockable.io/buffs/1"
-    static let invalidDataErrorMessage = "Invalid Data"
 }
 
 class BuffService {
     
-    func fetchBuffs(completionHandler: @escaping (BuffModel?) -> Void) {
+    func fetchBuffs(id: Int,
+                    errorHandler: @escaping (_ error: BuffError) -> Void,
+                    successHandler: @escaping (_ data: BuffModel) -> Void) {
         
-        AF.request(BuffServiceConstants.serviceURL)
+        let urlString = BuffServiceConstants.serviceURL + String(id)
+        AF.request(urlString)
           .validate()
           .responseDecodable(of: BuffModel.self) { (response) in
             guard response.error == nil else {
-                print(response.error?.localizedDescription ?? "error")
-                completionHandler(nil)
+                errorHandler(BuffError(error: response.error))
                 return
             }
             guard let buff = response.value else {
-                print(BuffServiceConstants.invalidDataErrorMessage)
-                completionHandler(nil)
+                errorHandler(BuffError(errorType: .invalidData))
                 return
             }
-            completionHandler(buff)
+            successHandler(buff)
           }
     }
 }

@@ -39,7 +39,11 @@ public class BuffView: UIViewNibLoadable {
 
 extension BuffView: BuffViewModelDelegate {
 
-    func modelUpdateDidFinish() {
+    func modelUpdateDidSucced() {
+        
+    }
+    
+    func modelUpdateDidFail(error: BuffError) {
         
     }
 }
