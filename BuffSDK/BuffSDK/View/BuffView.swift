@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct BuffViewConstants {
+    static let errorTitle = "Error"
+    static let errorMessage = "You have no internet connection."
+}
+
 public class BuffView: UIViewNibLoadable {
     let viewModel = BuffViewModel()
     
@@ -27,13 +32,13 @@ public class BuffView: UIViewNibLoadable {
     
     func populateView() {
         guard NetworkConnection.isNetworkReachable else {
-            UIAlertController.showAlert(message: BuffViewModelConstants.errorMessage,
-                                        title: BuffViewModelConstants.errorTitle)
+            UIAlertController.showAlert(message: BuffViewConstants.errorMessage,
+                                        title: BuffViewConstants.errorTitle)
             return
         }
         
         viewModel.delegate = self
-        viewModel.performModelUpdate()
+        viewModel.startMonitoringQuestions()
     }
 }
 

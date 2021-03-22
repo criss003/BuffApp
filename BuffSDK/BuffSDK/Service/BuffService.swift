@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 struct BuffServiceConstants {
-    static let serviceURL = "https://demo2373134.mockable.io/buffs/1"
+    static let serviceURL = "https://demo2373134.mockable.io/buffs/"
 }
 
 class BuffService {
