@@ -14,7 +14,7 @@
 		280D98A026068D79009708E7 /* BuffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D989A26068D79009708E7 /* BuffModel.swift */; };
 		280D98AB26068E29009708E7 /* BuffService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D98AA26068E29009708E7 /* BuffService.swift */; };
 		280D98B126068E4F009708E7 /* BuffViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D98B026068E4F009708E7 /* BuffViewModel.swift */; };
-		280D98B626068EF1009708E7 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 280D98B526068EF1009708E7 /* Reachability */; };
+		280D98CB2607F188009708E7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 280D98CA2607F188009708E7 /* Alamofire */; };
 		E617E33223AA9C5400BB7970 /* BuffSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = E617E33123AA9C5400BB7970 /* BuffSDK.swift */; };
 		E6497CB525FA7E80004AFD12 /* CircularTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6497CB425FA7E80004AFD12 /* CircularTimer.swift */; };
 		E6497CBC25FA7EAC004AFD12 /* UIViewNibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6497CBB25FA7EAC004AFD12 /* UIViewNibLoadable.swift */; };
@@ -69,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				280D98B626068EF1009708E7 /* Reachability in Frameworks */,
+				280D98CB2607F188009708E7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +230,7 @@
 			);
 			name = BuffSDK;
 			packageProductDependencies = (
-				280D98B526068EF1009708E7 /* Reachability */,
+				280D98CA2607F188009708E7 /* Alamofire */,
 			);
 			productName = BuffSDK;
 			productReference = E6652CBB2384247B00A1BF6D /* BuffSDK.framework */;
@@ -285,7 +285,7 @@
 			);
 			mainGroup = E6652CB12384247B00A1BF6D;
 			packageReferences = (
-				280D98B426068EF1009708E7 /* XCRemoteSwiftPackageReference "Reachability" */,
+				280D98C92607F188009708E7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = E6652CBC2384247B00A1BF6D /* Products */;
 			projectDirPath = "";
@@ -639,21 +639,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		280D98B426068EF1009708E7 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+		280D98C92607F188009708E7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.1.0;
+				minimumVersion = 5.4.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		280D98B526068EF1009708E7 /* Reachability */ = {
+		280D98CA2607F188009708E7 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 280D98B426068EF1009708E7 /* XCRemoteSwiftPackageReference "Reachability" */;
-			productName = Reachability;
+			package = 280D98C92607F188009708E7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

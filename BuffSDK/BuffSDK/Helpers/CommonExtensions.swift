@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Reachability
+import Alamofire
 
 struct CommonExtensionsConstants {
     static let confirmation = "OK"
@@ -16,12 +16,7 @@ struct CommonExtensionsConstants {
 class NetworkConnection {
     
     static var isNetworkReachable: Bool {
-        let reachability = try? Reachability()
-        if let reachabilityConnection = reachability?.connection {
-            return reachabilityConnection != .unavailable
-        }
-        
-        return false
+        return NetworkReachabilityManager()?.isReachable ?? false
     }
 }
 

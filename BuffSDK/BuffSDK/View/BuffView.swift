@@ -32,9 +32,6 @@ public class BuffView: UIViewNibLoadable {
             return
         }
         
-//        activityIndicatorView.startAnimating()
-//        activityIndicatorView.center = view.center
-        
         viewModel.delegate = self
         viewModel.performModelUpdate()
     }
@@ -43,9 +40,6 @@ public class BuffView: UIViewNibLoadable {
 extension BuffView: BuffViewModelDelegate {
 
     func modelUpdateDidFinish() {
-        DispatchQueue.main.async {
-//            self.activityIndicatorView.stopAnimating()
-//            self.tableView.reloadData()
-        }
+        
     }
 }
