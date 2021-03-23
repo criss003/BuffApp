@@ -54,6 +54,12 @@ class QuestionsView: UIViewNibLoadable {
     }
 }
 
+extension QuestionsView: SenderTableViewCellDelegate {
+    func didCloseAction() {
+        delegate?.closeAction()
+    }
+}
+
 extension QuestionsView: UITableViewDataSource, UITableViewDelegate {
     
     // MARK: UITableViewDataSource
@@ -77,20 +83,22 @@ extension QuestionsView: UITableViewDataSource, UITableViewDelegate {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: QuestionsViewConstants.answerTableViewCell, for: indexPath) as! AnswerTableViewCell
             cell.configure(rowInfo: rowInfo)
-            cell.delegate = self
             return cell
         }
     }
-}
-
-extension QuestionsView: SenderTableViewCellDelegate {
-    func didCloseAction() {
-        delegate?.closeAction()
-    }
-}
-
-extension QuestionsView: AnswerTableViewCellDelegate {
-    func didSelectAction() {
-        
+    
+    // MARK: UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row >= RowTypeModelConstants.topSections,
+           let answerCell = tableView.cellForRow(at: indexPath) as? AnswerTableViewCell {
+            answerCell.selectAnswer()
+            if let questionCell = tableView.cellForRow(at: IndexPath(row: RowTypeModel.question.rawValue, section: 0)) as? QuestionTableViewCell {
+                questionCell.stopCountdown()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    self.delegate?.closeAction()
+                }
+            }
+        }
     }
 }

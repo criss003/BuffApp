@@ -14,4 +14,8 @@ class QuestionTableViewCell: UITableViewCell {
     func configure(rowInfo: (value: String?, avatar: String?)) {
         valueLabel.text = rowInfo.value
     }
+    
+    func stopCountdown() {
+        
+    }
 }
