@@ -61,7 +61,7 @@ class CircularTimer: UIView {
         timeLabel = UILabel(frame: CGRect(x: rect.midX, y: rect.midY, width: rect.size.width, height: rect.size.height))
         timeLabel.textAlignment = .center
         timeLabel.center = CGPoint(x: rect.midX, y: rect.midY)
-        timeLabel.font = UIFont(name: "Gibson-SemiBold", size: 12)!
+        timeLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 12)!
         timeLabel.textColor = textColor
         addSubview(timeLabel)
     }

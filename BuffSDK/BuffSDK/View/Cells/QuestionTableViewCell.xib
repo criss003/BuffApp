@@ -29,17 +29,28 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b68-t9-WQU" customClass="CircularTimer" customModule="BuffSDK" customModuleProvider="target">
+                        <rect key="frame" x="374" y="0.0" width="40" height="40"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="AVv-VS-JkO"/>
+                            <constraint firstAttribute="width" constant="40" id="nS4-8f-eVX"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstItem="b68-t9-WQU" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" id="DDu-NO-EUj"/>
                     <constraint firstAttribute="trailing" secondItem="0p4-R4-VPI" secondAttribute="trailing" constant="20" id="Fht-Sv-BII"/>
                     <constraint firstItem="0p4-R4-VPI" firstAttribute="leading" secondItem="Ldl-1N-9aK" secondAttribute="leading" constant="20" id="LkH-5B-w5P"/>
                     <constraint firstItem="0p4-R4-VPI" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" constant="12" id="NkC-c3-BCc"/>
                     <constraint firstAttribute="bottom" secondItem="0p4-R4-VPI" secondAttribute="bottom" constant="12" id="Qyc-Es-yVP"/>
+                    <constraint firstAttribute="trailing" secondItem="b68-t9-WQU" secondAttribute="trailing" id="zt8-Qz-Zgd"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="circularTimer" destination="b68-t9-WQU" id="xfB-WC-nlM"/>
                 <outlet property="valueLabel" destination="0p4-R4-VPI" id="S5U-B4-pzm"/>
             </connections>
             <point key="canvasLocation" x="-658" y="-10"/>

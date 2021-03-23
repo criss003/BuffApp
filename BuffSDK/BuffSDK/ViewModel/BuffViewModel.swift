@@ -9,7 +9,7 @@
 import Foundation
 
 struct BuffViewModelConstants {
-    static let timerInterval = 5.0
+    static let timerInterval = 7.0
     static let idMinValue = 1
     static let idMaxValue = 5
 }
