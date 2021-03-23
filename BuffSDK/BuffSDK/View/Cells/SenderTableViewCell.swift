@@ -10,6 +10,11 @@ import UIKit
 
 class SenderTableViewCell: UITableViewCell {
     @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    
+    @IBAction func closeAction(_ sender: Any) {
+        
+    }
     
     func configure(rowInfo: (value: String?, avatar: String?)) {
         valueLabel.text = rowInfo.value
