@@ -61,13 +61,15 @@ private extension BuffView {
         leadingConstraint.constant = 0
         UIView.animate(withDuration: 0.3) {
             self.layoutIfNeeded()
+            self.questionsView.alpha = 1
         }
     }
     
     func hideQuestionsView() {
-        leadingConstraint.constant = -self.frame.width
+        leadingConstraint.constant = -frame.width
         UIView.animate(withDuration: 0.3, animations: {
             self.layoutIfNeeded()
+            self.questionsView.alpha = 0
         }, completion: { _ in
             self.delegate?.shouldHide()
         })
