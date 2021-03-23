@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WB9-Nk-FB9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="5" width="414" height="34"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -43,13 +43,13 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="WB9-Nk-FB9" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" id="89b-5P-mUU"/>
+                    <constraint firstItem="WB9-Nk-FB9" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" constant="5" id="89b-5P-mUU"/>
                     <constraint firstItem="WB9-Nk-FB9" firstAttribute="leading" secondItem="Ldl-1N-9aK" secondAttribute="leading" id="BOj-bC-7qr"/>
                     <constraint firstItem="b68-t9-WQU" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" id="DDu-NO-EUj"/>
                     <constraint firstAttribute="trailing" secondItem="0p4-R4-VPI" secondAttribute="trailing" constant="20" id="Fht-Sv-BII"/>
                     <constraint firstItem="0p4-R4-VPI" firstAttribute="leading" secondItem="Ldl-1N-9aK" secondAttribute="leading" constant="20" id="LkH-5B-w5P"/>
                     <constraint firstItem="0p4-R4-VPI" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" constant="12" id="NkC-c3-BCc"/>
-                    <constraint firstAttribute="bottom" secondItem="WB9-Nk-FB9" secondAttribute="bottom" id="OmI-U5-K3x"/>
+                    <constraint firstAttribute="bottom" secondItem="WB9-Nk-FB9" secondAttribute="bottom" constant="5" id="OmI-U5-K3x"/>
                     <constraint firstAttribute="bottom" secondItem="0p4-R4-VPI" secondAttribute="bottom" constant="12" id="Qyc-Es-yVP"/>
                     <constraint firstAttribute="trailing" secondItem="WB9-Nk-FB9" secondAttribute="trailing" id="yBl-ED-sPS"/>
                     <constraint firstAttribute="trailing" secondItem="b68-t9-WQU" secondAttribute="trailing" id="zt8-Qz-Zgd"/>

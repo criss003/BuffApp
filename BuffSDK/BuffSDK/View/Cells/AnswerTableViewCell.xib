@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,9 +16,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p4-R4-VPI">
-                        <rect key="frame" x="20" y="5" width="344" height="34"/>
-                        <color key="backgroundColor" name="brownGrey50"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="voF-si-gXX">
+                        <rect key="frame" x="0.0" y="5" width="414" height="34"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p4-R4-VPI">
+                        <rect key="frame" x="50" y="5" width="314" height="34"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,9 +41,13 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="0p4-R4-VPI" secondAttribute="trailing" constant="50" id="5bl-Mn-Znh"/>
-                    <constraint firstItem="0p4-R4-VPI" firstAttribute="leading" secondItem="Ldl-1N-9aK" secondAttribute="leading" constant="20" id="8tw-P7-CVT"/>
+                    <constraint firstAttribute="bottom" secondItem="voF-si-gXX" secondAttribute="bottom" constant="5" id="5rU-FV-kLR"/>
+                    <constraint firstItem="0p4-R4-VPI" firstAttribute="leading" secondItem="Ldl-1N-9aK" secondAttribute="leading" constant="50" id="8tw-P7-CVT"/>
                     <constraint firstItem="0p4-R4-VPI" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" constant="5" id="cUu-9z-3ZN"/>
+                    <constraint firstAttribute="trailing" secondItem="voF-si-gXX" secondAttribute="trailing" id="duf-Dv-gt6"/>
+                    <constraint firstItem="voF-si-gXX" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" constant="5" id="jRI-Uu-VZu"/>
                     <constraint firstAttribute="bottom" secondItem="0p4-R4-VPI" secondAttribute="bottom" constant="5" id="luh-bq-bcI"/>
+                    <constraint firstItem="voF-si-gXX" firstAttribute="leading" secondItem="Ldl-1N-9aK" secondAttribute="leading" id="sZ9-oK-daP"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,9 +57,4 @@
             <point key="canvasLocation" x="-658" y="-10"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <namedColor name="brownGrey50">
-            <color red="0.58399999141693115" green="0.58399999141693115" blue="0.58399999141693115" alpha="0.50199997425079346" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>
