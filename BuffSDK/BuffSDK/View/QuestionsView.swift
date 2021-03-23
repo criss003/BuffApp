@@ -65,6 +65,7 @@ extension QuestionsView: UITableViewDataSource, UITableViewDelegate {
         if indexPath.row == RowTypeModel.sender.rawValue {
             let cell: SenderTableViewCell = tableView.dequeueReusableCell(withIdentifier: QuestionsViewConstants.senderTableViewCell, for: indexPath) as! SenderTableViewCell
             cell.configure(rowInfo: rowInfo)
+            cell.delegate = self
             return cell
         } else if indexPath.row == RowTypeModel.question.rawValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: QuestionsViewConstants.questionTableViewCell, for: indexPath) as! QuestionTableViewCell
@@ -73,8 +74,20 @@ extension QuestionsView: UITableViewDataSource, UITableViewDelegate {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: QuestionsViewConstants.answerTableViewCell, for: indexPath) as! AnswerTableViewCell
             cell.configure(rowInfo: rowInfo)
+            cell.delegate = self
             return cell
         }
     }
+}
 
+extension QuestionsView: SenderTableViewCellDelegate {
+    func didCloseAction() {
+        
+    }
+}
+
+extension QuestionsView: AnswerTableViewCellDelegate {
+    func didSelectAction() {
+        
+    }
 }

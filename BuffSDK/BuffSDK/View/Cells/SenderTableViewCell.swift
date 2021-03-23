@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol SenderTableViewCellDelegate: class {
+    func didCloseAction()
+}
+
 class SenderTableViewCell: UITableViewCell {
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     
+    weak var delegate: SenderTableViewCellDelegate?
+    
     @IBAction func closeAction(_ sender: Any) {
-        
+        delegate?.didCloseAction()
     }
     
     func configure(rowInfo: (value: String?, avatar: String?)) {

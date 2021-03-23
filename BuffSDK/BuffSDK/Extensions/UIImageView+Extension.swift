@@ -9,7 +9,12 @@
 import UIKit
 
 extension UIImageView {
+    
     public func imageFromUrl(urlString: String) {
+        guard NetworkConnection.isNetworkReachable else {
+            return
+        }
+        
         if let url = URL(string: urlString) {
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: url)

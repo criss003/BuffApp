@@ -20,6 +20,7 @@ public protocol BuffViewDelegate: class {
 @IBDesignable
 public class BuffView: UIViewNibLoadable {
     public weak var delegate: BuffViewDelegate?
+    
     @IBOutlet weak var questionsView: QuestionsView!
     let viewModel = BuffViewModel()
     
