@@ -60,8 +60,8 @@ private extension BuffView {
         delegate?.shouldShow()
         leadingConstraint.constant = 0
         UIView.animate(withDuration: 0.3) {
-            self.layoutIfNeeded()
             self.questionsView.alpha = 1
+            self.layoutIfNeeded()
         }
     }
     

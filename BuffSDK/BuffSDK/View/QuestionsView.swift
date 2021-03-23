@@ -48,7 +48,9 @@ class QuestionsView: UIViewNibLoadable {
     func configureUI(buffModel: BuffModel?) {
         viewModel.updateData(buffModel: buffModel)
         tableView.reloadData()
+        layoutIfNeeded()
         heightConstraint.constant = tableView.contentSize.height
+        layoutIfNeeded()
     }
 }
 
