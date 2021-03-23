@@ -14,6 +14,7 @@ class QuestionTableViewCell: UITableViewCell {
     
     func configure(questionsInfoModel: QuestionsInfoModel) {
         valueLabel.text = questionsInfoModel.value
+        circularTimer.resetTimer()
         circularTimer.startTimer(TimeInterval(questionsInfoModel.countdown))
     }
     
