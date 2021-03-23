@@ -16,19 +16,37 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p4-R4-VPI">
-                        <rect key="frame" x="20" y="12" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="authorBox" translatesAutoresizingMaskIntoConstraints="NO" id="r6A-nT-ffL">
+                        <rect key="frame" x="0.0" y="0.0" width="102.5" height="44"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p4-R4-VPI">
+                        <rect key="frame" x="25" y="0.0" width="52.5" height="44"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="r6A-nT-ffL" firstAttribute="trailing" secondItem="0p4-R4-VPI" secondAttribute="trailing" constant="25" id="3Js-PJ-Ccd"/>
+                    <constraint firstItem="r6A-nT-ffL" firstAttribute="leading" secondItem="Ldl-1N-9aK" secondAttribute="leading" id="DEZ-bX-v2E"/>
+                    <constraint firstAttribute="bottom" secondItem="r6A-nT-ffL" secondAttribute="bottom" id="G4q-Lw-dHa"/>
+                    <constraint firstItem="0p4-R4-VPI" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" id="S0G-FG-pvg"/>
+                    <constraint firstAttribute="bottom" secondItem="0p4-R4-VPI" secondAttribute="bottom" id="T2T-zh-wWC"/>
+                    <constraint firstItem="0p4-R4-VPI" firstAttribute="leading" secondItem="Ldl-1N-9aK" secondAttribute="leading" constant="25" id="hJA-NL-akG"/>
+                    <constraint firstItem="r6A-nT-ffL" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" id="lt0-df-enz"/>
+                </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="valueLabel" destination="0p4-R4-VPI" id="S5U-B4-pzm"/>
             </connections>
-            <point key="canvasLocation" x="-658" y="-10"/>
+            <point key="canvasLocation" x="-659.4202898550725" y="-10.044642857142856"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="authorBox" width="33" height="39"/>
+    </resources>
 </document>
