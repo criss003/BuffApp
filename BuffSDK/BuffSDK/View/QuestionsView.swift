@@ -12,6 +12,7 @@ private struct QuestionsViewConstants {
     static let senderTableViewCell = "SenderTableViewCell"
     static let questionTableViewCell = "QuestionTableViewCell"
     static let answerTableViewCell = "AnswerTableViewCell"
+    static let hideDelay = 2.0
 }
 
 protocol QuestionsViewDelegate: class {
@@ -62,7 +63,9 @@ extension QuestionsView: SenderTableViewCellDelegate {
 
 extension QuestionsView: CircularTimerDelegate {
     func didStop() {
-        delegate?.closeAction()
+        DispatchQueue.main.asyncAfter(deadline: .now() + QuestionsViewConstants.hideDelay) {
+            self.delegate?.closeAction()
+        }
     }
 }
 
@@ -101,7 +104,7 @@ extension QuestionsView: UITableViewDataSource, UITableViewDelegate {
             answerCell.selectAnswer()
             if let questionCell = tableView.cellForRow(at: IndexPath(row: RowTypeModel.question.rawValue, section: 0)) as? QuestionTableViewCell {
                 questionCell.stopCountdown()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + QuestionsViewConstants.hideDelay) {
                     self.delegate?.closeAction()
                 }
             }
