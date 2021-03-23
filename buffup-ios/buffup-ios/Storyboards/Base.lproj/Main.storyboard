@@ -55,39 +55,35 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CiW-Jd-yqY" userLabel="ButtonsView">
                                 <rect key="frame" x="30" y="605" width="368" height="279"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1SU-Qx-yPL">
-                                        <rect key="frame" x="8" y="114.66666666666663" width="352" height="50"/>
-                                        <color key="backgroundColor" name="ceruleanBlue"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="ibh-Ff-4Ml"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
-                                        <state key="normal" title="Start Video">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="Yfq-CY-EHj" kind="show" id="3f9-n6-RF6"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="1SU-Qx-yPL" secondAttribute="trailing" constant="8" id="GWv-8B-kIz"/>
-                                    <constraint firstItem="1SU-Qx-yPL" firstAttribute="centerY" secondItem="CiW-Jd-yqY" secondAttribute="centerY" id="hvD-x7-qAa"/>
-                                    <constraint firstItem="1SU-Qx-yPL" firstAttribute="leading" secondItem="CiW-Jd-yqY" secondAttribute="leading" constant="8" id="jfV-kb-X9F"/>
-                                </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1SU-Qx-yPL">
+                                <rect key="frame" x="38" y="50" width="352" height="50"/>
+                                <color key="backgroundColor" name="ceruleanBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ibh-Ff-4Ml"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                <state key="normal" title="Start Video">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Yfq-CY-EHj" kind="show" id="3f9-n6-RF6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7R9-Ps-VTX"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1SU-Qx-yPL" secondAttribute="trailing" constant="38" id="2dx-AI-RKT"/>
+                            <constraint firstItem="1SU-Qx-yPL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="5Ce-zn-fgv"/>
                             <constraint firstItem="KHW-eJ-ohO" firstAttribute="trailing" secondItem="g3R-8W-eAp" secondAttribute="trailing" constant="40" id="6rI-gb-KKD"/>
                             <constraint firstItem="KHW-eJ-ohO" firstAttribute="leading" secondItem="g3R-8W-eAp" secondAttribute="leading" id="8FQ-Ae-iO4"/>
                             <constraint firstAttribute="trailing" secondItem="1KD-fJ-Xsd" secondAttribute="trailing" id="Bjs-YH-HwY"/>
                             <constraint firstItem="uQE-a4-S7o" firstAttribute="top" secondItem="KHW-eJ-ohO" secondAttribute="bottom" constant="8" id="CbN-Pc-wdI"/>
                             <constraint firstItem="CiW-Jd-yqY" firstAttribute="leading" secondItem="7R9-Ps-VTX" secondAttribute="leading" constant="30" id="Dpk-Ei-Pos"/>
                             <constraint firstItem="KHW-eJ-ohO" firstAttribute="top" secondItem="g3R-8W-eAp" secondAttribute="bottom" constant="20" id="E4X-b9-PAP"/>
+                            <constraint firstItem="1SU-Qx-yPL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="38" id="EY8-6P-8iT"/>
                             <constraint firstItem="ZP1-XB-3Jo" firstAttribute="top" secondItem="uQE-a4-S7o" secondAttribute="bottom" constant="8" id="JxA-0v-yzF"/>
                             <constraint firstItem="euZ-m9-z0C" firstAttribute="leading" secondItem="g3R-8W-eAp" secondAttribute="trailing" constant="8" id="NzU-YH-YyG"/>
                             <constraint firstAttribute="bottom" secondItem="1KD-fJ-Xsd" secondAttribute="bottom" id="PgX-lW-2Yz"/>
