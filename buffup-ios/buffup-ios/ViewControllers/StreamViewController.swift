@@ -38,7 +38,6 @@ class StreamViewController: LandscapeViewController {
         if let videoURL = URL(string: urlString) {
             self.playVideoWithURL(url: videoURL)
         }
-        view.bringSubviewToFront(buffView)
     }
     
     deinit {

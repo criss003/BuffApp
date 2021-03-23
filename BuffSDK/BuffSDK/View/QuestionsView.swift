@@ -15,7 +15,7 @@ private struct QuestionsViewConstants {
 }
 
 protocol QuestionsViewDelegate: class {
-    func didRequestAction(questionsView: QuestionsView)
+    func closeAction()
 }
 
 @IBDesignable
@@ -23,6 +23,7 @@ class QuestionsView: UIViewNibLoadable {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var heightConstraint: NSLayoutConstraint!
     
+    weak var delegate: QuestionsViewDelegate?
     let viewModel = QuestionsViewModel()
     
     override func awakeFromNib() {
@@ -82,7 +83,7 @@ extension QuestionsView: UITableViewDataSource, UITableViewDelegate {
 
 extension QuestionsView: SenderTableViewCellDelegate {
     func didCloseAction() {
-        
+        delegate?.closeAction()
     }
 }
 

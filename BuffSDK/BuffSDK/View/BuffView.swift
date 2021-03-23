@@ -40,16 +40,6 @@ public class BuffView: UIViewNibLoadable {
         
         populateView()
     }
-        
-    public func showQuestionsView() {
-        leadingConstraint.constant = 0
-        animateView()
-    }
-    
-    public func hideQuestionsView() {
-        leadingConstraint.constant = -self.frame.width
-        animateView()
-    }
 }
 
 private extension BuffView {
@@ -61,15 +51,26 @@ private extension BuffView {
         }
         
         leadingConstraint.constant = -frame.width
-        
+        questionsView.delegate = self
         viewModel.delegate = self
         viewModel.startMonitoringQuestions()
     }
     
-    func animateView() {
+    func showQuestionsView() {
+        delegate?.shouldShow()
+        leadingConstraint.constant = 0
         UIView.animate(withDuration: 0.3) {
             self.layoutIfNeeded()
         }
+    }
+    
+    func hideQuestionsView() {
+        leadingConstraint.constant = -self.frame.width
+        UIView.animate(withDuration: 0.3, animations: {
+            self.layoutIfNeeded()
+        }, completion: { _ in
+            self.delegate?.shouldHide()
+        })
     }
 }
 
@@ -77,12 +78,16 @@ extension BuffView: BuffViewModelDelegate {
 
     func modelUpdateDidSucced(buffModel: BuffModel?) {
         questionsView.configureUI(buffModel: buffModel)
-        delegate?.shouldShow()
         showQuestionsView()
     }
     
     func modelUpdateDidFail(error: BuffError) {
-        delegate?.shouldHide()
+        hideQuestionsView()
+    }
+}
+
+extension BuffView: QuestionsViewDelegate {
+    func closeAction() {
         hideQuestionsView()
     }
 }
