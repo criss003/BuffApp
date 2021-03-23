@@ -1,5 +1,5 @@
 //
-//  Array+safe.swift
+//  Array+Extensions.swift
 //  BuffSDK
 //
 //  Created by Criss on 3/20/21.

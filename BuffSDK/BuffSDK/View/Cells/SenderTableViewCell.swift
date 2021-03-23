@@ -18,5 +18,8 @@ class SenderTableViewCell: UITableViewCell {
     
     func configure(rowInfo: (value: String?, avatar: String?)) {
         valueLabel.text = rowInfo.value
+        if let urlString = rowInfo.avatar {
+            avatarImageView.imageFromUrl(urlString: urlString)
+        }
     }
 }

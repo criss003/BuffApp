@@ -32,14 +32,15 @@ class QuestionsView: UIViewNibLoadable {
     }
     
     func registerCells() {
+        let bundle = Bundle.sdkBundle
         tableView.register(UINib(nibName: QuestionsViewConstants.senderTableViewCell,
-                                 bundle: Bundle(for: Self.self)),
+                                 bundle: bundle),
                            forCellReuseIdentifier: QuestionsViewConstants.senderTableViewCell)
         tableView.register(UINib(nibName: QuestionsViewConstants.questionTableViewCell,
-                                 bundle: Bundle(for: Self.self)),
+                                 bundle: bundle),
                            forCellReuseIdentifier: QuestionsViewConstants.questionTableViewCell)
         tableView.register(UINib(nibName: QuestionsViewConstants.answerTableViewCell,
-                                 bundle: Bundle(for: Self.self)),
+                                 bundle: bundle),
                            forCellReuseIdentifier: QuestionsViewConstants.answerTableViewCell)
     }
     
