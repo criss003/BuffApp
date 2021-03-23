@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,34 +16,42 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WB9-Nk-FB9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p4-R4-VPI">
                         <rect key="frame" x="20" y="12" width="374" height="20"/>
-                        <color key="backgroundColor" name="greyishBrownTransparent"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="20"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b68-t9-WQU" customClass="CircularTimer" customModule="BuffSDK" customModuleProvider="target">
-                        <rect key="frame" x="374" y="0.0" width="40" height="40"/>
+                        <rect key="frame" x="394" y="0.0" width="20" height="20"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="AVv-VS-JkO"/>
-                            <constraint firstAttribute="width" constant="40" id="nS4-8f-eVX"/>
+                            <constraint firstAttribute="height" constant="20" id="AVv-VS-JkO"/>
+                            <constraint firstAttribute="width" constant="20" id="nS4-8f-eVX"/>
                         </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstItem="WB9-Nk-FB9" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" id="89b-5P-mUU"/>
+                    <constraint firstItem="WB9-Nk-FB9" firstAttribute="leading" secondItem="Ldl-1N-9aK" secondAttribute="leading" id="BOj-bC-7qr"/>
                     <constraint firstItem="b68-t9-WQU" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" id="DDu-NO-EUj"/>
                     <constraint firstAttribute="trailing" secondItem="0p4-R4-VPI" secondAttribute="trailing" constant="20" id="Fht-Sv-BII"/>
                     <constraint firstItem="0p4-R4-VPI" firstAttribute="leading" secondItem="Ldl-1N-9aK" secondAttribute="leading" constant="20" id="LkH-5B-w5P"/>
                     <constraint firstItem="0p4-R4-VPI" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" constant="12" id="NkC-c3-BCc"/>
+                    <constraint firstAttribute="bottom" secondItem="WB9-Nk-FB9" secondAttribute="bottom" id="OmI-U5-K3x"/>
                     <constraint firstAttribute="bottom" secondItem="0p4-R4-VPI" secondAttribute="bottom" constant="12" id="Qyc-Es-yVP"/>
+                    <constraint firstAttribute="trailing" secondItem="WB9-Nk-FB9" secondAttribute="trailing" id="yBl-ED-sPS"/>
                     <constraint firstAttribute="trailing" secondItem="b68-t9-WQU" secondAttribute="trailing" id="zt8-Qz-Zgd"/>
                 </constraints>
             </tableViewCellContentView>
@@ -53,12 +60,7 @@
                 <outlet property="circularTimer" destination="b68-t9-WQU" id="xfB-WC-nlM"/>
                 <outlet property="valueLabel" destination="0p4-R4-VPI" id="S5U-B4-pzm"/>
             </connections>
-            <point key="canvasLocation" x="-658" y="-10"/>
+            <point key="canvasLocation" x="-659.4202898550725" y="-10.044642857142856"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <namedColor name="greyishBrownTransparent">
-            <color red="0.31400001049041748" green="0.31400001049041748" blue="0.31400001049041748" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>
