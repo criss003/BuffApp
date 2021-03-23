@@ -15,6 +15,7 @@ struct BuffViewConstants {
 
 public protocol BuffViewDelegate: class {
     func shouldShow()
+    func shouldHide()
 }
 
 @IBDesignable
@@ -77,9 +78,11 @@ extension BuffView: BuffViewModelDelegate {
     func modelUpdateDidSucced(buffModel: BuffModel?) {
         questionsView.configureUI(buffModel: buffModel)
         delegate?.shouldShow()
+        showQuestionsView()
     }
     
     func modelUpdateDidFail(error: BuffError) {
-        print(error.message)
+        delegate?.shouldHide()
+        hideQuestionsView()
     }
 }

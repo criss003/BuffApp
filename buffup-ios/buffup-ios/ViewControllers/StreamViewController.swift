@@ -38,6 +38,7 @@ class StreamViewController: LandscapeViewController {
         if let videoURL = URL(string: urlString) {
             self.playVideoWithURL(url: videoURL)
         }
+        view.bringSubviewToFront(buffView)
     }
     
     deinit {
@@ -110,6 +111,9 @@ extension StreamViewController: BuffViewDelegate {
     func shouldShow() {
         buffView.isHidden = false
         view.bringSubviewToFront(buffView)
-        buffView.showQuestionsView()
+    }
+    
+    func shouldHide() {
+        buffView.isHidden = true
     }
 }
