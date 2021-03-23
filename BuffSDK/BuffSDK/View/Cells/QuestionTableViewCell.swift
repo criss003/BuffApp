@@ -12,9 +12,9 @@ class QuestionTableViewCell: UITableViewCell {
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var circularTimer: CircularTimer!
     
-    func configure(questionsInfoModel: QuestionsInfoModel) {
+    func configure(questionsInfoModel: QuestionsInfoModel, delegate: CircularTimerDelegate?) {
         valueLabel.text = questionsInfoModel.value
-        circularTimer.resetTimer()
+        circularTimer.delegate = delegate
         circularTimer.startTimer(TimeInterval(questionsInfoModel.countdown))
     }
     

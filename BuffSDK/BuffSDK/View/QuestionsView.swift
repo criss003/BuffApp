@@ -60,6 +60,12 @@ extension QuestionsView: SenderTableViewCellDelegate {
     }
 }
 
+extension QuestionsView: CircularTimerDelegate {
+    func didStop() {
+        delegate?.closeAction()
+    }
+}
+
 extension QuestionsView: UITableViewDataSource, UITableViewDelegate {
     
     // MARK: UITableViewDataSource
@@ -78,7 +84,7 @@ extension QuestionsView: UITableViewDataSource, UITableViewDelegate {
             return cell
         } else if indexPath.row == RowTypeModel.question.rawValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: QuestionsViewConstants.questionTableViewCell, for: indexPath) as! QuestionTableViewCell
-            cell.configure(questionsInfoModel: rowInfo)
+            cell.configure(questionsInfoModel: rowInfo, delegate: self)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: QuestionsViewConstants.answerTableViewCell, for: indexPath) as! AnswerTableViewCell

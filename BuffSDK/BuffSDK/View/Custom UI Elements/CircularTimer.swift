@@ -8,8 +8,14 @@
 
 import UIKit
 
+protocol CircularTimerDelegate: class {
+    func didStop()
+}
+
 @IBDesignable
 class CircularTimer: UIView {
+    
+    weak var delegate: CircularTimerDelegate?
     
     private let timeLeftShapeLayer = CAShapeLayer()
     private let bgShapeLayer = CAShapeLayer()
@@ -93,6 +99,8 @@ class CircularTimer: UIView {
         layer.removeAnimation(forKey: "pulse")
         timer?.invalidate()
         timer = nil
+        
+        delegate?.didStop()
     }
     
     func startTimer(_ duration: TimeInterval) {
