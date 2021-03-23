@@ -11,8 +11,8 @@ import UIKit
 class AnswerTableViewCell: UITableViewCell {
     @IBOutlet weak var valueLabel: UILabel!
         
-    func configure(rowInfo: (value: String?, avatar: String?)) {
-        valueLabel.text = rowInfo.value
+    func configure(questionsInfoModel: QuestionsInfoModel) {
+        valueLabel.text = questionsInfoModel.value
     }
     
     func selectAnswer() {

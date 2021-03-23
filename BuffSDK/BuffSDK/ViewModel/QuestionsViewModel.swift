@@ -20,11 +20,14 @@ class QuestionsViewModel {
         return RowTypeModelConstants.topSections + numberOfAnswers
     }
     
-    func rowInfo(at indexPath: IndexPath) -> (value: String?, avatar: String?) {
+    func rowInfo(at indexPath: IndexPath) -> QuestionsInfoModel {
         let index = indexPath.row < RowTypeModel.allCases.count ? indexPath.row : RowTypeModel.allCases.count - 1
         guard let rowType = RowTypeModel(rawValue: index) else {
-            return (nil, nil)
+            return QuestionsInfoModel()
         }
-        return (rowType.value(buffModel: buffModel, index: indexPath.row), rowType.avatar(buffModel: buffModel))
+        return QuestionsInfoModel(value: rowType.value(buffModel: buffModel, index: indexPath.row),
+                                  avatar: rowType.avatar(buffModel: buffModel),
+                                  countdown: buffModel?.result?.time_to_show ?? 0)
+            
     }
 }

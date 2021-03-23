@@ -22,9 +22,9 @@ class SenderTableViewCell: UITableViewCell {
         delegate?.didCloseAction()
     }
     
-    func configure(rowInfo: (value: String?, avatar: String?)) {
-        valueLabel.text = rowInfo.value
-        if let urlString = rowInfo.avatar {
+    func configure(questionsInfoModel: QuestionsInfoModel) {
+        valueLabel.text = questionsInfoModel.value
+        if let urlString = questionsInfoModel.avatar {
             avatarImageView.imageFromUrl(urlString: urlString)
         }
     }
