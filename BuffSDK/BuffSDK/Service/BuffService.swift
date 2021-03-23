@@ -17,12 +17,12 @@ class BuffService {
     
     func fetchBuffs(id: Int,
                     errorHandler: @escaping (_ error: BuffError) -> Void,
-                    successHandler: @escaping (_ data: BuffModel) -> Void) {
+                    successHandler: @escaping (_ data: BuffDecodable) -> Void) {
         
         let urlString = BuffServiceConstants.serviceURL + String(id)
         AF.request(urlString)
           .validate()
-          .responseDecodable(of: BuffModel.self) { (response) in
+          .responseDecodable(of: BuffDecodable.self) { (response) in
             guard response.error == nil else {
                 errorHandler(BuffError(error: response.error))
                 return

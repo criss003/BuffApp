@@ -15,12 +15,13 @@
 		280D98AB26068E29009708E7 /* BuffService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D98AA26068E29009708E7 /* BuffService.swift */; };
 		280D98B126068E4F009708E7 /* BuffViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D98B026068E4F009708E7 /* BuffViewModel.swift */; };
 		280D98CB2607F188009708E7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 280D98CA2607F188009708E7 /* Alamofire */; };
-		280D98F026090868009708E7 /* BuffError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D98EF26090868009708E7 /* BuffError.swift */; };
 		2845C9BD26095CE300B4DCD9 /* SenderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2845C9BC26095CE300B4DCD9 /* SenderTableViewCell.xib */; };
 		2845C9C126095D8700B4DCD9 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2845C9C026095D8700B4DCD9 /* AnswerTableViewCell.xib */; };
 		2845C9C526095DBA00B4DCD9 /* QuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2845C9C426095DBA00B4DCD9 /* QuestionTableViewCell.xib */; };
 		2845C9C9260A545900B4DCD9 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845C9C8260A545900B4DCD9 /* UIImageView+Extension.swift */; };
 		2845C9CF260A8EF600B4DCD9 /* QuestionsInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845C9CE260A8EF600B4DCD9 /* QuestionsInfoModel.swift */; };
+		2845C9D6260A96CC00B4DCD9 /* BuffDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845C9D5260A96CC00B4DCD9 /* BuffDecodable.swift */; };
+		2845C9DB260A972700B4DCD9 /* BuffError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845C9DA260A972700B4DCD9 /* BuffError.swift */; };
 		284D9A1226093DB4003AD41D /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284D9A1126093DB4003AD41D /* Array+Extensions.swift */; };
 		284D9A1926094681003AD41D /* SenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284D9A1826094681003AD41D /* SenderTableViewCell.swift */; };
 		284D9A1D26094A2C003AD41D /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284D9A1C26094A2C003AD41D /* QuestionsViewModel.swift */; };
@@ -58,12 +59,13 @@
 		280D989A26068D79009708E7 /* BuffModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuffModel.swift; sourceTree = "<group>"; };
 		280D98AA26068E29009708E7 /* BuffService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuffService.swift; sourceTree = "<group>"; };
 		280D98B026068E4F009708E7 /* BuffViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuffViewModel.swift; sourceTree = "<group>"; };
-		280D98EF26090868009708E7 /* BuffError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuffError.swift; sourceTree = "<group>"; };
 		2845C9BC26095CE300B4DCD9 /* SenderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SenderTableViewCell.xib; sourceTree = "<group>"; };
 		2845C9C026095D8700B4DCD9 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
 		2845C9C426095DBA00B4DCD9 /* QuestionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionTableViewCell.xib; sourceTree = "<group>"; };
 		2845C9C8260A545900B4DCD9 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		2845C9CE260A8EF600B4DCD9 /* QuestionsInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsInfoModel.swift; sourceTree = "<group>"; };
+		2845C9D5260A96CC00B4DCD9 /* BuffDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuffDecodable.swift; sourceTree = "<group>"; };
+		2845C9DA260A972700B4DCD9 /* BuffError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuffError.swift; sourceTree = "<group>"; };
 		284D9A1126093DB4003AD41D /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		284D9A1826094681003AD41D /* SenderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderTableViewCell.swift; sourceTree = "<group>"; };
 		284D9A1C26094A2C003AD41D /* QuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModel.swift; sourceTree = "<group>"; };
@@ -136,15 +138,25 @@
 		280D98A926068E29009708E7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				2845C9D9260A972700B4DCD9 /* Errors */,
+				2845C9D4260A968000B4DCD9 /* Data */,
 				280D98AA26068E29009708E7 /* BuffService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
 		};
-		280D98EE2609084A009708E7 /* Errors */ = {
+		2845C9D4260A968000B4DCD9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				280D98EF26090868009708E7 /* BuffError.swift */,
+				2845C9D5260A96CC00B4DCD9 /* BuffDecodable.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2845C9D9260A972700B4DCD9 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				2845C9DA260A972700B4DCD9 /* BuffError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -203,7 +215,6 @@
 		E6652CBD2384247B00A1BF6D /* BuffSDK */ = {
 			isa = PBXGroup;
 			children = (
-				280D98EE2609084A009708E7 /* Errors */,
 				E6497CC425FA7EE1004AFD12 /* Extensions */,
 				280D989626068D79009708E7 /* Helpers */,
 				280D98A926068E29009708E7 /* Service */,
@@ -399,17 +410,18 @@
 				E6497CD425FA7FFE004AFD12 /* UIView+Extensions.swift in Sources */,
 				2845C9CF260A8EF600B4DCD9 /* QuestionsInfoModel.swift in Sources */,
 				280D989126068CAC009708E7 /* QuestionsView.swift in Sources */,
+				2845C9D6260A96CC00B4DCD9 /* BuffDecodable.swift in Sources */,
 				280D989E26068D79009708E7 /* CommonExtensions.swift in Sources */,
 				284D9A1926094681003AD41D /* SenderTableViewCell.swift in Sources */,
 				E6497CBC25FA7EAC004AFD12 /* UIViewNibLoadable.swift in Sources */,
 				E6497CC025FA7ECF004AFD12 /* Bundle+Extensions.swift in Sources */,
 				E6497CB525FA7E80004AFD12 /* CircularTimer.swift in Sources */,
 				280D989F26068D79009708E7 /* RowTypeModel.swift in Sources */,
-				280D98F026090868009708E7 /* BuffError.swift in Sources */,
 				28F08B062609556600A16CC2 /* QuestionTableViewCell.swift in Sources */,
 				284D9A1226093DB4003AD41D /* Array+Extensions.swift in Sources */,
 				284D9A1D26094A2C003AD41D /* QuestionsViewModel.swift in Sources */,
 				280D98AB26068E29009708E7 /* BuffService.swift in Sources */,
+				2845C9DB260A972700B4DCD9 /* BuffError.swift in Sources */,
 				28F08B0A2609558800A16CC2 /* AnswerTableViewCell.swift in Sources */,
 				E66941C0249123810092ED98 /* BuffView.swift in Sources */,
 				280D98B126068E4F009708E7 /* BuffViewModel.swift in Sources */,

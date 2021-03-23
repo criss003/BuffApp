@@ -50,8 +50,8 @@ class BuffViewModel {
             self.delegate?.modelUpdateDidFail(error: buffError)
         } successHandler: { buffData in
             print(buffData)
-            self.buffModel = buffData
-            self.delegate?.modelUpdateDidSucced(buffModel: buffData)
+            self.buffModel = BuffModel(buffDecodable: buffData)
+            self.delegate?.modelUpdateDidSucced(buffModel: self.buffModel)
         }
     }
     

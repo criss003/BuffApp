@@ -16,7 +16,7 @@ class QuestionsViewModel {
     }
     
     func numberOfRows() -> Int {
-        let numberOfAnswers = buffModel?.result?.answers.count ?? 0
+        let numberOfAnswers = buffModel?.answers.count ?? 0
         return RowTypeModelConstants.topSections + numberOfAnswers
     }
     
@@ -27,7 +27,7 @@ class QuestionsViewModel {
         }
         return QuestionsInfoModel(value: rowType.value(buffModel: buffModel, index: indexPath.row),
                                   avatar: rowType.avatar(buffModel: buffModel),
-                                  countdown: buffModel?.result?.time_to_show ?? 0)
+                                  countdown: buffModel?.countdown ?? 0)
             
     }
 }

@@ -8,28 +8,25 @@
 
 import Foundation
 
-struct BuffModel: Decodable {
-    struct Question: Decodable {
-        let title: String?
-    }
+struct BuffModel {
+    var authorName: String?
+    var avatarImageName: String?
+    var question: String?
+    var answers: [String] = []
+    var countdown: Int = 0
     
-    struct Answer: Decodable {
-        let title: String?
+    init(buffDecodable: BuffDecodable) {
+        guard let buffResult = buffDecodable.result else {
+            return
+        }
+        authorName = [buffResult.author?.first_name, buffResult.author?.last_name].compactMap {
+            $0?.isEmpty == false ? $0 : nil
+        }.joined(separator: " ")
+        avatarImageName = buffResult.author?.image
+        question = buffResult.question?.title
+        answers = buffResult.answers.compactMap {
+            $0.title
+        }
+        countdown = buffResult.time_to_show ?? 0
     }
-    
-    struct Author: Decodable {
-        let first_name: String?
-        let last_name: String?
-        let image: String?
-    }
-    
-    struct Result: Decodable {
-        let id: Int?
-        let time_to_show: Int?
-        let author: Author?
-        let question: Question?
-        let answers: [Answer]
-    }
-    
-    let result: Result?
 }
