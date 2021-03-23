@@ -25,7 +25,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Generic.Answer_ico" translatesAutoresizingMaskIntoConstraints="NO" id="dzZ-LM-E0l">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="genericAnswer" translatesAutoresizingMaskIntoConstraints="NO" id="dzZ-LM-E0l">
                         <rect key="frame" x="20" y="8.5" width="30" height="27"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="cMy-QX-ngL"/>
@@ -61,12 +61,14 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="backgroundImageView" destination="voF-si-gXX" id="1Oq-QZ-ee5"/>
+                <outlet property="iconImage" destination="dzZ-LM-E0l" id="Enm-sj-789"/>
                 <outlet property="valueLabel" destination="0p4-R4-VPI" id="S5U-B4-pzm"/>
             </connections>
             <point key="canvasLocation" x="-659.4202898550725" y="-10.044642857142856"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Generic.Answer_ico" width="27" height="27"/>
+        <image name="genericAnswer" width="27" height="27"/>
     </resources>
 </document>
