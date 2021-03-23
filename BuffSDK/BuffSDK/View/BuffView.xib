@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BuffView">
             <connections>
+                <outlet property="leadingConstraint" destination="H6S-tK-dKo" id="K6l-a8-8eP"/>
                 <outlet property="questionsView" destination="s1Q-EQ-PEq" id="cmq-H2-O8B"/>
             </connections>
         </placeholder>

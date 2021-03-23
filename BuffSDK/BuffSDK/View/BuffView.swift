@@ -21,8 +21,10 @@ public protocol BuffViewDelegate: class {
 public class BuffView: UIViewNibLoadable {
     public weak var delegate: BuffViewDelegate?
     
-    @IBOutlet weak var questionsView: QuestionsView!
-    let viewModel = BuffViewModel()
+    @IBOutlet private weak var questionsView: QuestionsView!
+    @IBOutlet private weak var leadingConstraint: NSLayoutConstraint!
+    
+    private let viewModel = BuffViewModel()
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,7 +39,19 @@ public class BuffView: UIViewNibLoadable {
         
         populateView()
     }
+        
+    public func showQuestionsView() {
+        leadingConstraint.constant = 0
+        animateView()
+    }
     
+    public func hideQuestionsView() {
+        leadingConstraint.constant = -self.frame.width
+        animateView()
+    }
+}
+
+private extension BuffView {
     func populateView() {
         guard NetworkConnection.isNetworkReachable else {
             UIAlertController.showAlert(message: BuffViewConstants.errorMessage,
@@ -45,12 +59,16 @@ public class BuffView: UIViewNibLoadable {
             return
         }
         
+        leadingConstraint.constant = -frame.width
+        
         viewModel.delegate = self
         viewModel.startMonitoringQuestions()
     }
     
-    public func showQuestionsView() {
-
+    func animateView() {
+        UIView.animate(withDuration: 0.3) {
+            self.layoutIfNeeded()
+        }
     }
 }
 
