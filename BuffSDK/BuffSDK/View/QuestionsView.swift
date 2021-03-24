@@ -113,7 +113,6 @@ extension QuestionsView: UITableViewDataSource, UITableViewDelegate {
             answerCell.selectAnswer()
             if let questionCell = tableView.cellForRow(at: IndexPath(row: RowTypeModel.question.rawValue, section: 0)) as? QuestionTableViewCell {
                 questionCell.stopCountdown()
-                closeView(withDelay: true)
             }
         }
     }
