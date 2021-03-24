@@ -33,7 +33,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b68-t9-WQU" customClass="CircularTimer" customModule="BuffSDK" customModuleProvider="target">
-                        <rect key="frame" x="394" y="0.0" width="20" height="20"/>
+                        <rect key="frame" x="389" y="10" width="20" height="20"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="AVv-VS-JkO"/>
@@ -50,14 +50,14 @@
                 <constraints>
                     <constraint firstItem="WB9-Nk-FB9" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" constant="5" id="89b-5P-mUU"/>
                     <constraint firstItem="WB9-Nk-FB9" firstAttribute="leading" secondItem="Ldl-1N-9aK" secondAttribute="leading" id="BOj-bC-7qr"/>
-                    <constraint firstItem="b68-t9-WQU" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" id="DDu-NO-EUj"/>
                     <constraint firstAttribute="trailing" secondItem="0p4-R4-VPI" secondAttribute="trailing" constant="20" id="Fht-Sv-BII"/>
                     <constraint firstItem="0p4-R4-VPI" firstAttribute="leading" secondItem="Ldl-1N-9aK" secondAttribute="leading" constant="20" id="LkH-5B-w5P"/>
                     <constraint firstItem="0p4-R4-VPI" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" constant="12" id="NkC-c3-BCc"/>
                     <constraint firstAttribute="bottom" secondItem="WB9-Nk-FB9" secondAttribute="bottom" constant="5" id="OmI-U5-K3x"/>
                     <constraint firstAttribute="bottom" secondItem="0p4-R4-VPI" secondAttribute="bottom" constant="12" id="Qyc-Es-yVP"/>
+                    <constraint firstItem="b68-t9-WQU" firstAttribute="trailing" secondItem="WB9-Nk-FB9" secondAttribute="trailing" constant="-5" id="ZoJ-BS-DOE"/>
+                    <constraint firstItem="b68-t9-WQU" firstAttribute="top" secondItem="WB9-Nk-FB9" secondAttribute="top" constant="5" id="kAN-Mu-CGz"/>
                     <constraint firstAttribute="trailing" secondItem="WB9-Nk-FB9" secondAttribute="trailing" id="yBl-ED-sPS"/>
-                    <constraint firstAttribute="trailing" secondItem="b68-t9-WQU" secondAttribute="trailing" id="zt8-Qz-Zgd"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

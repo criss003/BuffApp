@@ -42,7 +42,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVj-Bb-We5">
-                        <rect key="frame" x="370" y="3" width="44" height="44"/>
+                        <rect key="frame" x="377" y="-5" width="44" height="44"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" image="btnClose"/>
                         <connections>
@@ -52,6 +52,7 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstItem="gVj-Bb-We5" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" constant="-5" id="0Ni-Mr-Yfb"/>
                     <constraint firstItem="r6A-nT-ffL" firstAttribute="trailing" secondItem="0p4-R4-VPI" secondAttribute="trailing" constant="15" id="3Js-PJ-Ccd"/>
                     <constraint firstItem="IJh-ow-3gR" firstAttribute="leading" secondItem="Ldl-1N-9aK" secondAttribute="leading" constant="20" id="9NQ-26-Sg7"/>
                     <constraint firstItem="IJh-ow-3gR" firstAttribute="centerY" secondItem="Ldl-1N-9aK" secondAttribute="centerY" id="APA-HB-Emn"/>
@@ -59,12 +60,11 @@
                     <constraint firstItem="0p4-R4-VPI" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" id="S0G-FG-pvg"/>
                     <constraint firstAttribute="bottom" secondItem="0p4-R4-VPI" secondAttribute="bottom" id="T2T-zh-wWC"/>
                     <constraint firstItem="r6A-nT-ffL" firstAttribute="centerY" secondItem="Ldl-1N-9aK" secondAttribute="centerY" constant="5" id="UUo-Zp-ozz"/>
-                    <constraint firstAttribute="trailing" secondItem="gVj-Bb-We5" secondAttribute="trailing" id="cr1-AG-c8m"/>
+                    <constraint firstAttribute="trailing" secondItem="gVj-Bb-We5" secondAttribute="trailing" constant="-7" id="cr1-AG-c8m"/>
                     <constraint firstItem="0p4-R4-VPI" firstAttribute="leading" secondItem="Ldl-1N-9aK" secondAttribute="leading" constant="60" id="hJA-NL-akG"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IJh-ow-3gR" secondAttribute="bottom" constant="10" id="kyc-PK-4OS"/>
                     <constraint firstItem="gVj-Bb-We5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="r6A-nT-ffL" secondAttribute="trailing" constant="20" id="n1c-GY-jnf"/>
                     <constraint firstItem="IJh-ow-3gR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ldl-1N-9aK" secondAttribute="top" constant="10" id="nWc-B3-kCP"/>
-                    <constraint firstItem="gVj-Bb-We5" firstAttribute="centerY" secondItem="Ldl-1N-9aK" secondAttribute="centerY" id="nmz-VL-NhK"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
