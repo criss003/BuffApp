@@ -21,18 +21,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="10"/>
+                                <integer key="value" value="17"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="genericAnswer" translatesAutoresizingMaskIntoConstraints="NO" id="dzZ-LM-E0l">
-                        <rect key="frame" x="20" y="8.5" width="30" height="27"/>
+                        <rect key="frame" x="2" y="8.5" width="30" height="27"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="cMy-QX-ngL"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p4-R4-VPI">
-                        <rect key="frame" x="65" y="5" width="299" height="34"/>
+                        <rect key="frame" x="42" y="5" width="322" height="34"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                         <nil key="textColor"/>
@@ -49,14 +49,14 @@
                     <constraint firstAttribute="trailing" secondItem="0p4-R4-VPI" secondAttribute="trailing" constant="50" id="5bl-Mn-Znh"/>
                     <constraint firstAttribute="bottom" secondItem="voF-si-gXX" secondAttribute="bottom" constant="5" id="5rU-FV-kLR"/>
                     <constraint firstItem="dzZ-LM-E0l" firstAttribute="centerY" secondItem="0p4-R4-VPI" secondAttribute="centerY" id="FME-FU-4BN"/>
-                    <constraint firstItem="dzZ-LM-E0l" firstAttribute="leading" secondItem="Ldl-1N-9aK" secondAttribute="leading" constant="20" id="LXD-lS-yAq"/>
+                    <constraint firstItem="dzZ-LM-E0l" firstAttribute="leading" secondItem="Ldl-1N-9aK" secondAttribute="leading" constant="2" id="LXD-lS-yAq"/>
                     <constraint firstItem="0p4-R4-VPI" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" constant="5" id="cUu-9z-3ZN"/>
                     <constraint firstAttribute="trailing" secondItem="voF-si-gXX" secondAttribute="trailing" id="duf-Dv-gt6"/>
                     <constraint firstItem="voF-si-gXX" firstAttribute="top" secondItem="Ldl-1N-9aK" secondAttribute="top" constant="5" id="jRI-Uu-VZu"/>
                     <constraint firstAttribute="bottom" secondItem="0p4-R4-VPI" secondAttribute="bottom" constant="5" id="luh-bq-bcI"/>
                     <constraint firstItem="voF-si-gXX" firstAttribute="leading" secondItem="Ldl-1N-9aK" secondAttribute="leading" id="sZ9-oK-daP"/>
                     <constraint firstItem="dzZ-LM-E0l" firstAttribute="height" relation="lessThanOrEqual" secondItem="voF-si-gXX" secondAttribute="height" multiplier="0.794118" id="tZO-7o-wzr"/>
-                    <constraint firstItem="0p4-R4-VPI" firstAttribute="leading" secondItem="dzZ-LM-E0l" secondAttribute="trailing" constant="15" id="zlm-Sy-MJd"/>
+                    <constraint firstItem="0p4-R4-VPI" firstAttribute="leading" secondItem="dzZ-LM-E0l" secondAttribute="trailing" constant="10" id="zlm-Sy-MJd"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
