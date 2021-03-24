@@ -12,6 +12,7 @@ struct BuffViewConstants {
     static let errorTitle = "Error"
     static let errorMessage = "You have no internet connection."
     static let animationDuration = 0.5
+    static let leadingDefault: CGFloat = 20
 }
 
 public protocol BuffViewDelegate: class {
@@ -59,7 +60,7 @@ private extension BuffView {
     
     func showQuestionsView() {
         delegate?.shouldShow()
-        leadingConstraint.constant = 0
+        leadingConstraint.constant = BuffViewConstants.leadingDefault
         UIView.animate(withDuration: BuffViewConstants.animationDuration) {
             self.questionsView.alpha = 1
             self.layoutIfNeeded()
