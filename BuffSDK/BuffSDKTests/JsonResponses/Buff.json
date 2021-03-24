@@ -1,0 +1,32 @@
+{
+    "result": {
+        "id": 155,
+        "client_id": 1,
+        "stream_id": 1,
+        "time_to_show": 10,
+        "priority": 3,
+        "created_at": "2020-01-31T22:19:43.180391Z",
+        "author": {
+            "first_name": "Pedro",
+            "last_name": "Luz"
+        },
+        "question": {
+            "id": 155,
+            "title": "Ball Circle Personal Loan Account impactful",
+            "category": 1
+        },
+        "answers": [
+            {
+                "id": 387,
+                "buff_id": 0,
+                "title": "324324"
+            },
+            {
+                "id": 388,
+                "buff_id": 0,
+                "title": "wqewqewq"
+            }
+        ],
+        "language": "en"
+    }
+}

@@ -22,6 +22,10 @@
 		2845C9CF260A8EF600B4DCD9 /* QuestionsInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845C9CE260A8EF600B4DCD9 /* QuestionsInfoModel.swift */; };
 		2845C9D6260A96CC00B4DCD9 /* BuffDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845C9D5260A96CC00B4DCD9 /* BuffDecodable.swift */; };
 		2845C9DB260A972700B4DCD9 /* BuffError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845C9DA260A972700B4DCD9 /* BuffError.swift */; };
+		2845C9E1260B2ED700B4DCD9 /* BuffViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845C9E0260B2ED700B4DCD9 /* BuffViewModelTests.swift */; };
+		2845C9E5260B2EF700B4DCD9 /* QuestionsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845C9E4260B2EF700B4DCD9 /* QuestionsViewModelTests.swift */; };
+		2845C9F4260B30A600B4DCD9 /* JsonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2845C9F3260B30A600B4DCD9 /* JsonFactory.swift */; };
+		2845C9FB260B319600B4DCD9 /* Buff.json in Resources */ = {isa = PBXBuildFile; fileRef = 2845C9FA260B319600B4DCD9 /* Buff.json */; };
 		284D9A1226093DB4003AD41D /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284D9A1126093DB4003AD41D /* Array+Extensions.swift */; };
 		284D9A1926094681003AD41D /* SenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284D9A1826094681003AD41D /* SenderTableViewCell.swift */; };
 		284D9A1D26094A2C003AD41D /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284D9A1C26094A2C003AD41D /* QuestionsViewModel.swift */; };
@@ -66,6 +70,10 @@
 		2845C9CE260A8EF600B4DCD9 /* QuestionsInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsInfoModel.swift; sourceTree = "<group>"; };
 		2845C9D5260A96CC00B4DCD9 /* BuffDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuffDecodable.swift; sourceTree = "<group>"; };
 		2845C9DA260A972700B4DCD9 /* BuffError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuffError.swift; sourceTree = "<group>"; };
+		2845C9E0260B2ED700B4DCD9 /* BuffViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuffViewModelTests.swift; sourceTree = "<group>"; };
+		2845C9E4260B2EF700B4DCD9 /* QuestionsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModelTests.swift; sourceTree = "<group>"; };
+		2845C9F3260B30A600B4DCD9 /* JsonFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonFactory.swift; sourceTree = "<group>"; };
+		2845C9FA260B319600B4DCD9 /* Buff.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Buff.json; sourceTree = "<group>"; };
 		284D9A1126093DB4003AD41D /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		284D9A1826094681003AD41D /* SenderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderTableViewCell.swift; sourceTree = "<group>"; };
 		284D9A1C26094A2C003AD41D /* QuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModel.swift; sourceTree = "<group>"; };
@@ -161,6 +169,22 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		2845C9F2260B30A600B4DCD9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2845C9F3260B30A600B4DCD9 /* JsonFactory.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2845C9F9260B319600B4DCD9 /* JsonResponses */ = {
+			isa = PBXGroup;
+			children = (
+				2845C9FA260B319600B4DCD9 /* Buff.json */,
+			);
+			path = JsonResponses;
+			sourceTree = "<group>";
+		};
 		284D9A172609460B003AD41D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +256,10 @@
 		E6652CC82384247B00A1BF6D /* BuffSDKTests */ = {
 			isa = PBXGroup;
 			children = (
+				2845C9F9260B319600B4DCD9 /* JsonResponses */,
+				2845C9F2260B30A600B4DCD9 /* Utilities */,
+				2845C9E0260B2ED700B4DCD9 /* BuffViewModelTests.swift */,
+				2845C9E4260B2EF700B4DCD9 /* QuestionsViewModelTests.swift */,
 				E6652CC92384247B00A1BF6D /* BuffSDKTests.swift */,
 				E6652CCB2384247B00A1BF6D /* Info.plist */,
 			);
@@ -376,6 +404,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2845C9FB260B319600B4DCD9 /* Buff.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +464,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2845C9E5260B2EF700B4DCD9 /* QuestionsViewModelTests.swift in Sources */,
+				2845C9E1260B2ED700B4DCD9 /* BuffViewModelTests.swift in Sources */,
+				2845C9F4260B30A600B4DCD9 /* JsonFactory.swift in Sources */,
 				E6652CCA2384247B00A1BF6D /* BuffSDKTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,7 +624,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BuffSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -623,7 +655,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BuffSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
