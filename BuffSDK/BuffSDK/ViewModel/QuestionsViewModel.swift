@@ -9,9 +9,11 @@
 import Foundation
 
 class QuestionsViewModel {
+    var answerIsSelected = false
     private var buffModel: BuffModel?
     
     func updateData(buffModel: BuffModel?) {
+        answerIsSelected = false
         self.buffModel = buffModel
     }
     

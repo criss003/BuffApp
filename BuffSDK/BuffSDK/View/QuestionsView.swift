@@ -53,19 +53,27 @@ class QuestionsView: UIViewNibLoadable {
         heightConstraint.constant = tableView.contentSize.height
         layoutIfNeeded()
     }
+    
+    func closeView(animated: Bool) {
+        if animated {
+            DispatchQueue.main.asyncAfter(deadline: .now() + QuestionsViewConstants.hideDelay) {
+                self.delegate?.closeAction()
+            }
+        } else {
+            delegate?.closeAction()
+        }
+    }
 }
 
 extension QuestionsView: SenderTableViewCellDelegate {
     func didCloseAction() {
-        delegate?.closeAction()
+        closeView(animated: false)
     }
 }
 
 extension QuestionsView: CircularTimerDelegate {
     func didStop() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + QuestionsViewConstants.hideDelay) {
-            self.delegate?.closeAction()
-        }
+        closeView(animated: viewModel.answerIsSelected)
     }
 }
 
@@ -101,12 +109,11 @@ extension QuestionsView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row >= RowTypeModelConstants.topSections,
            let answerCell = tableView.cellForRow(at: indexPath) as? AnswerTableViewCell {
+            viewModel.answerIsSelected = true
             answerCell.selectAnswer()
             if let questionCell = tableView.cellForRow(at: IndexPath(row: RowTypeModel.question.rawValue, section: 0)) as? QuestionTableViewCell {
                 questionCell.stopCountdown()
-                DispatchQueue.main.asyncAfter(deadline: .now() + QuestionsViewConstants.hideDelay) {
-                    self.delegate?.closeAction()
-                }
+                closeView(animated: true)
             }
         }
     }

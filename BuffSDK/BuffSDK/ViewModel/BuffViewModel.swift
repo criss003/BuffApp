@@ -24,7 +24,7 @@ class BuffViewModel {
     // MARK: Vars
     
     weak var delegate: BuffViewModelDelegate?
-    private var idRequest: Int = BuffViewModelConstants.idMinValue
+    private var idRequest = BuffViewModelConstants.idMinValue
     private var timer: Timer?
     private var buffModel: BuffModel?
     
