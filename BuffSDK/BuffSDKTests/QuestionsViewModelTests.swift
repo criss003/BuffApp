@@ -30,7 +30,12 @@ class QuestionsViewModelTests: XCTestCase {
         }
         
         let buffModel = BuffModel(buffDecodable: result)
+        XCTAssertFalse(sut.answerIsSelected)
+        sut.answerIsSelected = true
+        XCTAssertTrue(sut.answerIsSelected)
+        
         sut.updateData(buffModel: buffModel)
+        XCTAssertFalse(sut.answerIsSelected)
         
         XCTAssertEqual(sut.numberOfRows(), 4)
         

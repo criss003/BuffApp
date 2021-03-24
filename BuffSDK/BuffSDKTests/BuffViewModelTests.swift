@@ -54,16 +54,16 @@ class BuffViewModelTests: XCTestCase {
     }
     
     func testErrors() {
-        let error1 = BuffError(errorType: .invalidData)
-        XCTAssertEqual(error1.title, BuffErrorConstants.invalidDataErrorTitle)
-        XCTAssertEqual(error1.message, BuffErrorConstants.invalidDataErrorMessage)
+        var error = BuffError(errorType: .invalidData)
+        XCTAssertEqual(error.title, BuffErrorConstants.invalidDataErrorTitle)
+        XCTAssertEqual(error.message, BuffErrorConstants.invalidDataErrorMessage)
         
-        let error2 = BuffError(errorType: .failed)
-        XCTAssertEqual(error2.title, BuffErrorConstants.failedErrorTitle)
-        XCTAssertEqual(error2.message, BuffErrorConstants.failedErrorMessage)
+        error = BuffError(errorType: .failed)
+        XCTAssertEqual(error.title, BuffErrorConstants.failedErrorTitle)
+        XCTAssertEqual(error.message, BuffErrorConstants.failedErrorMessage)
         
-        let error3 = BuffError(error: NSError(domain: "domain", code: 10000, userInfo: [NSLocalizedDescriptionKey: "Something went wrong"]))
-        XCTAssertEqual(error3.title, BuffErrorConstants.failedErrorTitle)
-        XCTAssertEqual(error3.message, "Something went wrong")
+        error = BuffError(error: NSError(domain: "domain", code: 10000, userInfo: [NSLocalizedDescriptionKey: "Something went wrong"]))
+        XCTAssertEqual(error.title, BuffErrorConstants.failedErrorTitle)
+        XCTAssertEqual(error.message, "Something went wrong")
     }
 }
