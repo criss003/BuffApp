@@ -10,25 +10,40 @@ import XCTest
 @testable import BuffSDK
 
 class QuestionsViewModelTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var sut: QuestionsViewModel!
+    let buffJson = JsonFactory().returnJson("Buff")!
+    
+    override func setUp() {
+        super.setUp()
+        sut = QuestionsViewModel()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() {
+        super.tearDown()
+        sut = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testRows() {
+        guard let result = JsonFactory().parseObject(object: BuffDecodable.self, json: buffJson) else {
+            XCTFail("Invalid json data")
+            return
         }
+        
+        let buffModel = BuffModel(buffDecodable: result)
+        sut.updateData(buffModel: buffModel)
+        
+        XCTAssertEqual(sut.numberOfRows(), 4)
+        
+        var rowInfo = sut.rowInfo(at: IndexPath(row: 0, section: 0))
+        XCTAssertEqual(rowInfo.value, buffModel.authorName)
+        
+        rowInfo = sut.rowInfo(at: IndexPath(row: 1, section: 0))
+        XCTAssertEqual(rowInfo.value, buffModel.question)
+        
+        rowInfo = sut.rowInfo(at: IndexPath(row: 2, section: 0))
+        XCTAssertEqual(rowInfo.value, buffModel.answers[0])
+        
+        rowInfo = sut.rowInfo(at: IndexPath(row: 3, section: 0))
+        XCTAssertEqual(rowInfo.value, buffModel.answers[1])
     }
-
 }

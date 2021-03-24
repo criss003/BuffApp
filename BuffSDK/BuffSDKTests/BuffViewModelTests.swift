@@ -24,12 +24,12 @@ class BuffViewModelTests: XCTestCase {
     }
     
     func testModel() {
-        guard let results = JsonFactory().parseObject(object: BuffDecodable.self, json: buffJson) else {
+        guard let result = JsonFactory().parseObject(object: BuffDecodable.self, json: buffJson) else {
             XCTFail("Invalid json data")
             return
         }
         
-        sut.configure(buffDecodable: results)
+        sut.configure(buffDecodable: result)
         XCTAssertNil(sut.buff!.avatarImageName)
         XCTAssertNotNil(sut.buff!.authorName)
         XCTAssertEqual(sut.buff!.authorName, "Pedro Luz")
