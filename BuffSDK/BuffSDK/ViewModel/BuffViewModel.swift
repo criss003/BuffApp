@@ -20,14 +20,22 @@ protocol BuffViewModelDelegate: class {
 }
 
 class BuffViewModel {
-        
+    
     // MARK: Vars
     
-    var buffModel: BuffModel?
     weak var delegate: BuffViewModelDelegate?
     
+    private var buffModel: BuffModel?
     private var idRequest = BuffViewModelConstants.idMinValue
     private var timer: Timer?
+    
+    var idBuff: Int {
+        return idRequest
+    }
+    
+    var buff: BuffModel? {
+        return buffModel
+    }
     
     // MARK: Methods
     
@@ -50,10 +58,13 @@ class BuffViewModel {
         BuffService().fetchBuffs(id: idRequest) { buffError in
             self.delegate?.modelUpdateDidFail(error: buffError)
         } successHandler: { buffData in
-            print(buffData)
-            self.buffModel = BuffModel(buffDecodable: buffData)
+            self.configure(buffDecodable: buffData)
             self.delegate?.modelUpdateDidSucced(buffModel: self.buffModel)
         }
+    }
+    
+    func configure(buffDecodable: BuffDecodable) {
+        self.buffModel = BuffModel(buffDecodable: buffDecodable)
     }
     
     func updateId() {
