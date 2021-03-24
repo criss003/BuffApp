@@ -13,8 +13,8 @@ protocol SenderTableViewCellDelegate: class {
 }
 
 class SenderTableViewCell: UITableViewCell {
-    @IBOutlet weak var valueLabel: UILabel!
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var valueLabel: UILabel!
+    @IBOutlet private weak var avatarImageView: UIImageView!
     
     weak var delegate: SenderTableViewCellDelegate?
     

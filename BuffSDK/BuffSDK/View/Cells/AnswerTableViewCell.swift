@@ -8,15 +8,15 @@
 
 import UIKit
 
-struct AnswerTableViewCellConstants {
+private struct AnswerTableViewCellConstants {
     static let correctImage = "correct"
     static let genericImage = "genericAnswer"
 }
 
 class AnswerTableViewCell: UITableViewCell {
-    @IBOutlet weak var valueLabel: UILabel!
-    @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBOutlet weak var iconImage: UIImageView!
+    @IBOutlet private weak var valueLabel: UILabel!
+    @IBOutlet private weak var backgroundImageView: UIImageView!
+    @IBOutlet private weak var iconImage: UIImageView!
     
     func configure(questionsInfoModel: QuestionsInfoModel) {
         valueLabel.text = questionsInfoModel.value

@@ -9,8 +9,8 @@
 import UIKit
 
 class QuestionTableViewCell: UITableViewCell {
-    @IBOutlet weak var valueLabel: UILabel!
-    @IBOutlet weak var circularTimer: CircularTimer!
+    @IBOutlet private weak var valueLabel: UILabel!
+    @IBOutlet private weak var circularTimer: CircularTimer!
     
     func configure(questionsInfoModel: QuestionsInfoModel, delegate: CircularTimerDelegate?) {
         valueLabel.text = questionsInfoModel.value

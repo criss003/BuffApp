@@ -25,7 +25,7 @@ class QuestionsView: UIViewNibLoadable {
     @IBOutlet private weak var heightConstraint: NSLayoutConstraint!
     
     weak var delegate: QuestionsViewDelegate?
-    let viewModel = QuestionsViewModel()
+    private let viewModel = QuestionsViewModel()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,6 +33,16 @@ class QuestionsView: UIViewNibLoadable {
         registerCells()
     }
     
+    func configureUI(buffModel: BuffModel?) {
+        viewModel.updateData(buffModel: buffModel)
+        tableView.reloadData()
+        layoutIfNeeded()
+        heightConstraint.constant = tableView.contentSize.height
+        layoutIfNeeded()
+    }
+}
+
+private extension QuestionsView {
     func registerCells() {
         let bundle = Bundle.sdkBundle
         tableView.register(UINib(nibName: QuestionsViewConstants.senderTableViewCell,
@@ -45,15 +55,7 @@ class QuestionsView: UIViewNibLoadable {
                                  bundle: bundle),
                            forCellReuseIdentifier: QuestionsViewConstants.answerTableViewCell)
     }
-    
-    func configureUI(buffModel: BuffModel?) {
-        viewModel.updateData(buffModel: buffModel)
-        tableView.reloadData()
-        layoutIfNeeded()
-        heightConstraint.constant = tableView.contentSize.height
-        layoutIfNeeded()
-    }
-    
+        
     func closeView(withDelay: Bool) {
         if withDelay {
             DispatchQueue.main.asyncAfter(deadline: .now() + QuestionsViewConstants.hideDelay) {
