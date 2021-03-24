@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct AnswerTableViewCellConstants {
+    static let correctImage = "correct"
+    static let genericImage = "genericAnswer"
+}
+
 class AnswerTableViewCell: UITableViewCell {
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -19,7 +24,7 @@ class AnswerTableViewCell: UITableViewCell {
     
     func selectAnswer() {
         backgroundImageView.backgroundColor = .cyan
-        iconImage.image = UIImage(named: "correct",
+        iconImage.image = UIImage(named: AnswerTableViewCellConstants.correctImage,
                                   in: Bundle.sdkBundle,
                                   compatibleWith: nil)
     }
@@ -27,7 +32,7 @@ class AnswerTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         backgroundImageView.backgroundColor = .white
-        iconImage.image = UIImage(named: "genericAnswer",
+        iconImage.image = UIImage(named: AnswerTableViewCellConstants.genericImage,
                                   in: Bundle.sdkBundle,
                                   compatibleWith: nil)
     }
