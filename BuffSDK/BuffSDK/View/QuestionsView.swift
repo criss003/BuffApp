@@ -54,8 +54,8 @@ class QuestionsView: UIViewNibLoadable {
         layoutIfNeeded()
     }
     
-    func closeView(animated: Bool) {
-        if animated {
+    func closeView(withDelay: Bool) {
+        if withDelay {
             DispatchQueue.main.asyncAfter(deadline: .now() + QuestionsViewConstants.hideDelay) {
                 self.delegate?.closeAction()
             }
@@ -67,13 +67,13 @@ class QuestionsView: UIViewNibLoadable {
 
 extension QuestionsView: SenderTableViewCellDelegate {
     func didCloseAction() {
-        closeView(animated: false)
+        closeView(withDelay: false)
     }
 }
 
 extension QuestionsView: CircularTimerDelegate {
     func didStop() {
-        closeView(animated: viewModel.answerIsSelected)
+        closeView(withDelay: viewModel.answerIsSelected)
     }
 }
 
@@ -113,7 +113,7 @@ extension QuestionsView: UITableViewDataSource, UITableViewDelegate {
             answerCell.selectAnswer()
             if let questionCell = tableView.cellForRow(at: IndexPath(row: RowTypeModel.question.rawValue, section: 0)) as? QuestionTableViewCell {
                 questionCell.stopCountdown()
-                closeView(animated: true)
+                closeView(withDelay: true)
             }
         }
     }
