@@ -66,4 +66,16 @@ class BuffViewModelTests: XCTestCase {
         XCTAssertEqual(error.title, BuffErrorConstants.failedErrorTitle)
         XCTAssertEqual(error.message, "Something went wrong")
     }
+    
+    func testTimerMonitoring() {
+        XCTAssertEqual(sut.idBuff, 1)
+        let numberOfSeconds: TimeInterval = BuffViewModelConstants.timerInterval
+        let durationExpectation = expectation(description: "durationExpectation")
+        sut.startMonitoringQuestions()
+        DispatchQueue.main.asyncAfter(deadline: .now() + numberOfSeconds, execute: {
+            durationExpectation.fulfill()
+            XCTAssertEqual(self.sut.idBuff, 2)
+        })
+        waitForExpectations(timeout: numberOfSeconds + 1, handler: nil)
+    }
 }
