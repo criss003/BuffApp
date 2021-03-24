@@ -30,8 +30,13 @@ class BuffViewModelTests: XCTestCase {
         }
         
         sut.configure(buffDecodable: results)
-        XCTAssertEqual(sut.buff!.answers.count, 2)
+        XCTAssertNil(sut.buff!.avatarImageName)
         XCTAssertNotNil(sut.buff!.authorName)
+        XCTAssertEqual(sut.buff!.authorName, "Pedro Luz")
+        XCTAssertEqual(sut.buff!.countdown, 10)
+        XCTAssertEqual(sut.buff!.answers.count, 2)
+        XCTAssertEqual(sut.buff!.answers[0], "324324")
+        XCTAssertEqual(sut.buff!.answers[1], "wqewqewq")
     }
     
     func testId() {
@@ -46,5 +51,19 @@ class BuffViewModelTests: XCTestCase {
         XCTAssertEqual(sut.idBuff, 5)
         sut.updateId()
         XCTAssertEqual(sut.idBuff, 1)
+    }
+    
+    func testErrors() {
+        let error1 = BuffError(errorType: .invalidData)
+        XCTAssertEqual(error1.title, BuffErrorConstants.invalidDataErrorTitle)
+        XCTAssertEqual(error1.message, BuffErrorConstants.invalidDataErrorMessage)
+        
+        let error2 = BuffError(errorType: .failed)
+        XCTAssertEqual(error2.title, BuffErrorConstants.failedErrorTitle)
+        XCTAssertEqual(error2.message, BuffErrorConstants.failedErrorMessage)
+        
+        let error3 = BuffError(error: NSError(domain: "domain", code: 10000, userInfo: [NSLocalizedDescriptionKey: "Something went wrong"]))
+        XCTAssertEqual(error3.title, BuffErrorConstants.failedErrorTitle)
+        XCTAssertEqual(error3.message, "Something went wrong")
     }
 }

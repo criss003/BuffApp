@@ -11,8 +11,8 @@ import Foundation
 struct BuffErrorConstants {
     static let invalidDataErrorTitle = "Invalid Data Title"
     static let invalidDataErrorMessage = "Invalid Data Message"
-    static let requestFailedErrorTitle = "Request Failed Title"
-    static let requestFailedErrorMessage = "Request Failed Message"
+    static let failedErrorTitle = "Request Failed Title"
+    static let failedErrorMessage = "Request Failed Message"
 }
 
 class BuffError: Error {
@@ -23,7 +23,7 @@ class BuffError: Error {
         var title: String {
             switch self {
             case .failed:
-                return BuffErrorConstants.requestFailedErrorTitle
+                return BuffErrorConstants.failedErrorTitle
             case .invalidData:
                 return BuffErrorConstants.invalidDataErrorTitle
             }
@@ -32,7 +32,7 @@ class BuffError: Error {
         var message: String {
             switch self {
             case .failed:
-                return BuffErrorConstants.requestFailedErrorMessage
+                return BuffErrorConstants.failedErrorMessage
             case .invalidData:
                 return BuffErrorConstants.invalidDataErrorMessage
             }
